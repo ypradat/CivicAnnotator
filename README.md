@@ -8,7 +8,7 @@ extra columns in the following format
 
 with
 
-- **Type**: one of *predictive* or *prognostic*.
+- **Type**: one of *Predictive* or *Prognostic*.
 - **Direction**: either *N* (Negative) or *P* (Positive).
 - **Level**: one of the 5 levels *A, B, C, D* and *E* used by CIViC.
 
