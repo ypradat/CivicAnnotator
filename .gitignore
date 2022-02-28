@@ -8,7 +8,6 @@ data/*
 # Logs
 *.log
 *.coverage
-logs/
 
 # Mac specific
 .DS_Store
