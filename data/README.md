@@ -14,5 +14,5 @@ The files in this folder are available upon request. The contents of the folder 
   during the annotation of mutations as well as rules for matching between values of `Variant_Classification` in the
   input MAF table and values of `variant` in the civic table of clinical evidence summaries.
 
-- :**Table_Correspondence_Tumor_Type.xlsx**: A table for converting between different classifications of tumors. This
+- **Table_Correspondence_Tumor_Type.xlsx**: A table for converting between different classifications of tumors. This
   table contains TCGA classification, MSKCC classification and CIViC classification of tumors.
