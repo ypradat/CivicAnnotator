@@ -605,12 +605,11 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Add Tumor_Sample and Normal_Sample fields.")
-    parser.add_argument('--input', type=str, help='Path to input table of variants.',
-                        default="results/annotation/somatic_civic_preprocess_maf/M2007-T1-ADN_vs_M2007-N.maf")
+    parser.add_argument('--input', type=str, help='Path to input table of variants.')
     parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
-                        default="../../data/resources/civic/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
+                        default="data/resources/civic/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
-                        default="../../data/resources/civic/CIViC_Curation_And_Rules_Mutation.xlsx")
+                        default="data/resources/civic/CIViC_Curation_And_Rules_Mutation.xlsx")
     parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.',
                         default='mut')
     parser.add_argument('--tumor_types', type=str, help='Tumor type designations in CIViC, separated with |.')
