@@ -15,6 +15,13 @@ with
 **NOTE**: not all possible combinations of these tree tags are automatically added to the input table in order to avoid
 completely empty columns.
 
+The script will also add the following 3 columns that detail how the alteration was matched in CIViC in order to
+allow for a manual review of the annotations.
+
+- `CIViC_Matching_Disease`
+- `CIViC_Matching_Type`
+- `CIViC_Matching_Variant`
+
 # Requirements
 
 In order to run the analysis, ensure the `conda` command is available and ensure you have all files in the `data` folder
