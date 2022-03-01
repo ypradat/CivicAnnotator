@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @created: Jan 14 2022
-@modified: Jan 28 2022
+@modified: Feb 28 2022
 @author: Yoann Pradat
 
     CentraleSupelec
@@ -671,7 +671,10 @@ class CivicAnnotator(object):
             raise NotImplementedError
 
         # print info about numbers of variants annotated
-        mask = ~df_ann["CIViC_Matching_Variant"].isnull()
+        if "CIViC_Matching_Variant" in df_ann.columns:
+            mask = ~df_ann["CIViC_Matching_Variant"].isnull()
+        else:
+            mask = pd.Series(False, index=df_ann.index)
         print("-INFO: %s/%s lines from the input table of alterations were matched in CIViC" % (sum(mask), len(mask)))
 
         cols_alt = list(df_alt.columns)
