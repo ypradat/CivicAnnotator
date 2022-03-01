@@ -4,7 +4,7 @@ This repository hosts some scripts for performing non-exhaustive annotations of 
 using the [CIViC database](https://civicdb.org/home). The script will leave the number of rows untouched and will add
 extra columns in the following format
 
-- \[Type\]:\[Direction\]:\[Level\]
+- `[Type]:[Direction]:[Level]`
 
 with
 
