@@ -19,3 +19,4 @@ output: examples/data/example_maf_annotated.tsv
 -INFO: excluded 6/308 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,N/A,Neomorphic
 -INFO: excluded 10/302 evidence lines having the following values of variant_origin: Rare Germline,Common Germline,N/A
 -INFO: excluded 20/292 evidence lines manually reviewed
+-INFO: 6/6 lines from the input table of alterations were matched in CIViC

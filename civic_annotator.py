@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @created: Jan 14 2022
-@modified: Jan 14 2022
+@modified: Jan 28 2022
 @author: Yoann Pradat
 
     CentraleSupelec
@@ -108,9 +108,19 @@ def build_mut_identifier(df, col_gene="Hugo_Symbol", col_start="Start_Position",
     return df
 
 
+def build_fus_identifier(df, col_gene_1="Gene_1", col_gene_2="Gene_2"):
+    dfc = df.copy()
+    cols = [col_gene_1, col_gene_2]
+    dfc["Fus_Identifier"] = dfc[cols].fillna("N/A").astype(str).apply("--".join, axis=1)
+    df["Fus_Identifier"] = dfc["Fus_Identifier"]
+    return df
+
+
 def build_alt_identifier(df, category, **kwargs):
     if category=="mut":
         return build_mut_identifier(df, **kwargs)
+    elif category=="fus":
+        return build_fus_identifier(df, **kwargs)
     else:
         raise NotImplementedError
 
@@ -118,10 +128,13 @@ def build_alt_identifier(df, category, **kwargs):
 def clean_alt_identifier(df, category):
     if category=="mut":
         del df["Mut_Identifier"]
+    elif category=="fus":
+        del df["Fus_Identifier"]
     else:
         raise NotImplementedError
 
     return df
+
 
 def shorten_aa(x):
     for aa_l, aa_s in AMINO_ACIDS.items():
@@ -353,22 +366,68 @@ class CivicPreprocessor(object):
         return df_civ.reset_index(drop=True)
 
 
+    def _reformat_fus_variant(self, df_civ):
+        # where possible, build gene_1 and gene_2 columns. If variant is "Fusions", gene_1 is set to gene
+        # and gene_2 is set to "Any"
+        df_civ["variant_reformatted"] = False
+        df_civ["gene_1"] = np.nan
+        df_civ["gene_2"] = np.nan
+        df_civ["gene_1_exon"] = np.nan
+        df_civ["gene_2_exon"] = np.nan
+
+        # trim white spaces
+        df_civ["variant"] = df_civ["variant"].str.strip()
+
+        # process "Fusion" variant
+        regex_fus = "^Fusion$"
+        mask = df_civ["variant"].apply(lambda x: re.search(regex_fus, x, re.IGNORECASE) is not None)
+        if sum(mask) > 0:
+            df_civ.loc[mask, "gene_1"] = df_civ.loc[mask, "gene"]
+            df_civ.loc[mask, "gene_2"] = "Any"
+            df_civ.loc[mask, "variant_reformatted"] = True
+
+        # process variants in format gene_1-gene_2
+        regex_ggs = "^[A-Z0-9]+-[A-Z0-9]+$"
+        mask = df_civ["variant"].apply(lambda x: re.search(regex_ggs, x) is not None)
+        if sum(mask) > 0:
+            df_ggs = df_civ.loc[mask,"variant"].apply(lambda x: x.split("-")).apply(pd.Series)
+            df_civ.loc[mask,"gene_1"] = df_ggs[0]
+            df_civ.loc[mask,"gene_2"] = df_ggs[1]
+            df_civ.loc[mask, "variant_reformatted"] = True
+
+        # process variants in format gene_1-gene_2 exon_1-exon_2
+        regex_ggee = "^[A-Z0-9]+-[A-Z0-9]+\s+[eE]{1}\d+-[eE]{1}\d+$"
+        mask = df_civ["variant"].apply(lambda x: re.search(regex_ggee, x) is not None)
+        if sum(mask)>0:
+            ggee_split = lambda x: x.split()[0].split("-") + x.split()[1].split("-")
+            df_ggee = df_civ.loc[mask,"variant"].apply(ggee_split).apply(pd.Series)
+            df_ggee[2] = df_ggee[2].apply(lambda x: re.sub("e", "", x, re.IGNORECASE))
+            df_ggee[3] = df_ggee[3].apply(lambda x: re.sub("e", "", x, re.IGNORECASE))
+            df_civ.loc[mask,"gene_1"] = df_ggee[0]
+            df_civ.loc[mask,"gene_2"] = df_ggee[1]
+            df_civ.loc[mask,"gene_1_exon"] = df_ggee[2]
+            df_civ.loc[mask,"gene_2_exon"] = df_ggee[3]
+            df_civ.loc[mask, "variant_reformatted"] = True
+
+        return df_civ.reset_index(drop=True)
+
+
     def _reformat_variant(self, df_civ):
         if self.category=="mut":
             return self._reformat_mut_variant(df_civ)
-        elif self.category=="cna":
-            raise NotImplementedError
         elif self.category=="fus":
+            return self._reformat_fus_variant(df_civ)
+        elif self.category=="cna":
             raise NotImplementedError
 
 
     def _add_variant_identifier(self, df_civ):
         if self.category=="mut":
-            return build_mut_identifier(df_civ, col_gene="gene", col_start="start", col_end="stop",
+            return build_alt_identifier(df_civ, self.category, col_gene="gene", col_start="start", col_end="stop",
                                         col_ref="reference_bases", col_alt="variant_bases")
-        elif self.category=="cna":
-            raise NotImplementedError
         elif self.category=="fus":
+            return build_alt_identifier(df_civ, self.category, col_gene_1="gene_1", col_gene_2="gene_2")
+        elif self.category=="cna":
             raise NotImplementedError
 
     def run(self, df_civ):
@@ -474,6 +533,27 @@ class CivicAnnotator(object):
         return (False, "F")
 
 
+    def _is_match_fus(self, x, y):
+        # extract values required to assess the match
+        x_gene_1 = x["gene_1"]
+        x_gene_2 = x["gene_2"]
+        y_gene_1 = y["Gene_1"]
+        y_gene_2 = y["Gene_2"]
+
+        # possible matches are 
+        #  - A -> gene 1 match exactly and gene 2 match exactly
+        #  - B -> gene_1 match exactly and gene 2 match by Any or the other way around
+        if x_gene_1 == y_gene_1 and x_gene_2 == y_gene_2:
+            return (True, "A")
+        else:
+            if x_gene_1 == "Any":
+                return (y_gene_2==x_gene_2 or y_gene_1==x_gene_2, "B")
+            elif x_gene_2 == "Any":
+                return (y_gene_2==x_gene_1 or y_gene_1==x_gene_1, "B")
+
+        return (False, "F")
+
+
     def _add_annotations(self, x, y, match_type):
         # add matching type 
         col = "CIViC_Matching_Type"
@@ -537,16 +617,16 @@ class CivicAnnotator(object):
         return y
 
 
-    def _annotate_mut(self, df_civ, df_maf):
+    def _annotate_mut(self, df_civ, df_alt):
         x_genes = set(df_civ["gene"].dropna())
-        y_genes = set(df_maf["Hugo_Symbol"].dropna())
+        y_genes = set(df_alt["Hugo_Symbol"].dropna())
 
         if len(x_genes.intersection(y_genes))==0:
-            print("-CIViC database and input alterations tables have no gene in common, no annotation.")
-            return df_maf.copy()
+            print("-CIViC database and input mutations table have no gene in common, no annotation.")
+            return df_alt.copy()
         else:
             ys = []
-            for _, y in df_maf.iterrows():
+            for _, y in df_alt.iterrows():
                 y_gene = y["Hugo_Symbol"]
                 if y_gene in x_genes:
                     for _, x in df_civ.loc[df_civ["gene"]==y_gene].iterrows():
@@ -558,44 +638,71 @@ class CivicAnnotator(object):
             return pd.concat(ys, axis=0)
 
 
-    def run(self, df_civ, df_maf):
+    def _annotate_fus(self, df_civ, df_alt):
+        x_genes_1 = set(df_civ["gene_1"].dropna())
+        x_genes_2 = set(df_civ["gene_2"].dropna())
+        y_genes_1 = set(df_alt["Gene_1"].dropna())
+        y_genes_2 = set(df_alt["Gene_2"].dropna())
+
+        if len(x_genes_1.intersection(y_genes_1))==0 & len(x_genes_2.intersection(y_genes_2))==0:
+            print("-CIViC database and input fusions table have no gene in common, no annotation.")
+            return df_alt.copy()
+        else:
+            ys = []
+            for _, y in df_alt.iterrows():
+                y_gene_1 = y["Gene_1"]
+                y_gene_2 = y["Gene_2"]
+                if y_gene_1 in x_genes_1 or y_gene_2 in x_genes_2:
+                    for _, x in df_civ.loc[(df_civ["gene_1"]==y_gene_1) | (df_civ["gene_2"]==y_gene_2)].iterrows():
+                        is_match, match_type = self._is_match_fus(x, y)
+                        if is_match:
+                            y = self._add_annotations(x, y, match_type)
+                ys.append(y.to_frame().T)
+
+            return pd.concat(ys, axis=0)
+
+
+    def run(self, df_civ, df_alt):
         if self.category=="mut":
-            df_ann = self._annotate_mut(df_civ, df_maf)
+            df_ann = self._annotate_mut(df_civ, df_alt)
+        elif self.category=="fus":
+            df_ann = self._annotate_fus(df_civ, df_alt)
         elif self.category=="cna":
             raise NotImplementedError
-        elif self.category=="fus":
-            raise NotImplementedError
 
-        cols_maf = list(df_maf.columns)
+        # print info about numbers of variants annotated
+        mask = ~df_ann["CIViC_Matching_Variant"].isnull()
+        print("-INFO: %s/%s lines from the input table of alterations were matched in CIViC" % (sum(mask), len(mask)))
+
+        cols_alt = list(df_alt.columns)
         cols_ann = list(df_ann.columns)
-        cols_new = list(set(cols_ann).difference(set(cols_maf)))
-        return df_ann[cols_maf + sorted(cols_new)]
+        cols_new = list(set(cols_ann).difference(set(cols_alt)))
+        return df_ann[cols_alt + sorted(cols_new)]
 
 
 def main(args):
     # load input alterations table
-    df_maf = pd.read_table(args.input)
+    df_alt = pd.read_table(args.input)
 
-    if df_maf.shape[0]==0:
-        df_ann = df_maf.copy()
+    if df_alt.shape[0]==0:
+        df_ann = df_alt.copy()
     else:
         # build identifier
-        df_maf = build_alt_identifier(df_maf, args.category)
-
-        # load and process CIViC table
-        df_civ = pd.read_excel(args.civic)
+        df_alt = build_alt_identifier(df_alt, args.category)
 
         # transform input tumor types to list
         args.tumor_types = args.tumor_types.split("|")
+
+        # load and process CIViC table
+        df_civ = pd.read_excel(args.civic)
 
         # apply a series of filters on CIViC table to select only relevant lines
         preprocessor = CivicPreprocessor(tumor_types=args.tumor_types, category=args.category, rules=args.rules)
         df_civ = preprocessor.run(df_civ)
 
-
         # perform the annotation
         annotator = CivicAnnotator(category=args.category, rules=args.rules)
-        df_ann = annotator.run(df_civ, df_maf)
+        df_ann = annotator.run(df_civ, df_alt)
         df_ann = clean_alt_identifier(df_ann, args.category)
 
     # save
@@ -605,14 +712,15 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Add Tumor_Sample and Normal_Sample fields.")
-    parser.add_argument('--input', type=str, help='Path to input table of variants.')
+    parser.add_argument('--input', type=str, help='Path to input table of variants.',
+                        default="examples/data/example_fus.tsv")
     parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
-                        default="data/resources/civic/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
+                        default="data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
-                        default="data/resources/civic/CIViC_Curation_And_Rules_Mutation.xlsx")
-    parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.',
-                        default='mut')
-    parser.add_argument('--tumor_types', type=str, help='Tumor type designations in CIViC, separated with |.')
+                        default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
+    parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='fus')
+    parser.add_argument('--tumor_types', type=str, help='Tumor type designations in CIViC, separated with |.',
+            default='Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer')
     parser.add_argument('--output', type=str, help='Path to output table of variants.')
     args = parser.parse_args()
 

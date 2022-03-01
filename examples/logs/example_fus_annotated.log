@@ -1,0 +1,22 @@
+input: examples/data/example_fus.tsv
+civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
+rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
+category: fus
+tumor_types: Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer
+output: examples/data/example_fus_annotated.tsv
+
+
+-INFO: selected 344/3855 evidence lines corresponding to the following tumor types: 
+	Breast Cancer
+	Breast Carcinoma
+	Estrogen-receptor Positive Breast Cancer
+	Her2-receptor Negative Breast Cancer
+	Solid Tumor
+	Cancer
+-INFO: selected 13/344 evidence lines corresponding to the fus category
+-INFO: excluded 0/13 evidence lines having the following values of evidence_type: Predisposing,Functional,N/A
+-INFO: excluded 2/13 evidence lines having the following values of evidence_direction: Does Not Support,N/A
+-INFO: excluded 0/11 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,N/A,Neomorphic
+-INFO: excluded 0/11 evidence lines having the following values of variant_origin: Rare Germline,Common Germline,N/A
+-INFO: excluded 0/11 evidence lines manually reviewed
+-INFO: 1/23 lines from the input table of alterations were matched in CIViC
