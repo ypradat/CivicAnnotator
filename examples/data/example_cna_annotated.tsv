@@ -1,0 +1,139 @@
+Sample_Id	Hugo_Symbol	Alteration	CIViC_Matching_Disease	CIViC_Matching_Type	CIViC_Matching_Variant	Predictive:N:D	Predictive:P:B	Predictive:P:C	Predictive:P:D	Prognostic:N:B	Prognostic:P:B
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	KRAS	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	RAC1	Amplification									
+A-Tumor	CCNE1	Amplification									
+A-Tumor	ERBB2	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION				Trastuzumab Emtansine		
+A-Tumor	RB1	Deletion									
+A-Tumor	CDK4	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	TERT	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	TERT	Amplification									
+A-Tumor	AKT1	Amplification									
+A-Tumor	BRAF	Amplification									
+A-Tumor	CCND3	Amplification									
+A-Tumor	CDK6	Amplification									
+A-Tumor	CXCR4	Amplification									
+A-Tumor	EZH2	Amplification									
+A-Tumor	FGFR4	Amplification									
+A-Tumor	FOXA1	Amplification									
+A-Tumor	MET	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma	A;A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Gefitinib		Crizotinib;Crizotinib;Crizotinib	Crizotinib		
+A-Tumor	MYC	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	PDGFRB	Amplification									
+A-Tumor	SMO	Amplification									
+A-Tumor	SRC	Amplification									
+A-Tumor	TERT	Amplification									
+A-Tumor	UBR5	Amplification									
+A-Tumor	CARD11	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	ETV1	Amplification									
+A-Tumor	RAC1	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	EZH2	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION					Y	
+A-Tumor	TERT	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	KDM5A	Amplification									
+A-Tumor	KRAS	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	AKT1	Amplification									
+A-Tumor	KRAS	Amplification									
+A-Tumor	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION					Y	
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	TERT	Amplification									
+A-Tumor	CCND3	Amplification									
+A-Tumor	RB1	Deletion									
+A-Tumor	TP53	Deletion									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	RUNX1	Deletion									
+A-Tumor	FOXA1	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	FOXA1	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	AKT3	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	TERT	Amplification									
+A-Tumor	ETV1	Amplification									
+A-Tumor	HLA-A	Deletion									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	MYC	Amplification									
+A-Tumor	CARD11	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	ETV1	Amplification									
+A-Tumor	RAC1	Amplification									
+A-Tumor	MDM2	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	FOXA1	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	ETV1	Amplification									
+A-Tumor	TERT	Amplification									
+A-Tumor	FOXA1	Amplification									
+A-Tumor	MDM2	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	MDM2	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	SDHD	Deletion									
+A-Tumor	BRAF	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	PTPRD	Deletion									
+A-Tumor	TERT	Amplification									
+A-Tumor	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Dovitinib		PD173074	Y	Y
+A-Tumor	CDK4	Amplification									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	ERBB3	Amplification									
+A-Tumor	GLI1	Amplification									
+A-Tumor	PTPRD	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	FOXA1	Amplification									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	KDR	Amplification									
+A-Tumor	KIT	Amplification									
+A-Tumor	PDGFRA	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION				Sunitinib		
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	SMARCA4	Deletion									
+A-Tumor	KDM5A	Amplification									
+A-Tumor	PTEN	Deletion	Cancer;Cancer	B;B	LOSS;LOSS		Buparlisib+Carboplatin+Paclitaxel		Capivasertib		
+A-Tumor	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Dovitinib		PD173074	Y	Y
+A-Tumor	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION					Y	
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	KDM5A	Amplification									
+A-Tumor	KRAS	Amplification									
+A-Tumor	KRAS	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	CDH1	Deletion									
+A-Tumor	MYC	Amplification									
+A-Tumor	MYC	Amplification									
+A-Tumor	UBR5	Amplification									
+A-Tumor	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION					Y	
+A-Tumor	MDM2	Amplification									
+A-Tumor	MYC	Amplification									
+A-Tumor	CDK4	Amplification									
+A-Tumor	ERBB2	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION				Trastuzumab Emtansine		
+A-Tumor	TP53	Deletion									
+A-Tumor	NKX2-1	Amplification									
+A-Tumor	AKT2	Amplification									
+A-Tumor	CCNE1	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	TERT	Amplification									
+A-Tumor	CDKN2A	Deletion									
+A-Tumor	PTPRD	Deletion									

@@ -116,13 +116,24 @@ def build_fus_identifier(df, col_gene_1="Gene_1", col_gene_2="Gene_2"):
     return df
 
 
+def build_cna_identifier(df, col_gene="Hugo_Symbol", col_alt="Alteration"):
+    dfc = df.copy()
+    cols = [col_gene, col_alt]
+    dfc[col_alt] = dfc[col_alt].str.upper()
+    dfc["Cna_Identifier"] = dfc[cols].fillna("N/A").astype(str).apply("--".join, axis=1)
+    df["Cna_Identifier"] = dfc["Cna_Identifier"]
+    return df
+
+
 def build_alt_identifier(df, category, **kwargs):
     if category=="mut":
         return build_mut_identifier(df, **kwargs)
     elif category=="fus":
         return build_fus_identifier(df, **kwargs)
+    elif category=="cna":
+        return build_cna_identifier(df, **kwargs)
     else:
-        raise NotImplementedError
+        raise ValueError("-ERROR! Unsupported value %s for category." %  category)
 
 
 def clean_alt_identifier(df, category):
@@ -130,8 +141,8 @@ def clean_alt_identifier(df, category):
         del df["Mut_Identifier"]
     elif category=="fus":
         del df["Fus_Identifier"]
-    else:
-        raise NotImplementedError
+    elif category=="cna":
+        del df["Cna_Identifier"]
 
     return df
 
@@ -412,13 +423,39 @@ class CivicPreprocessor(object):
         return df_civ.reset_index(drop=True)
 
 
+    def _reformat_cna_variant(self, df_civ):
+        df_civ["variant_reformatted"] = False
+        cna_values = ["DELETION", "LOSS", "LOH", "CN LOH", "AMPLIFICATION"]
+
+        # trim white spaces
+        df_civ["variant"] = df_civ["variant"].str.strip()
+
+        # harmonized between capital and small letters
+        df_civ["variant"] = df_civ["variant"].str.upper()
+
+        # rename some
+        old2new = {"COPY NUMBER VARIATION": "CNV",
+                   "COPY-NEUTRAL LOSS OF HETEROZYGOSITY": "CN LOH"}
+        df_civ["variant"] = df_civ["variant"].replace(old2new)
+
+        # split CNV into DELETION, LOSS, CN LOH, AMPLIFICATION
+        df_civ["variant"] = df_civ["variant"].replace({"CNV": "/".join(cna_values)})
+        df_civ = explode_df(df_civ, cols=["variant"], sep="/")
+
+        # expected values
+        mask = df_civ["variant"].isin(cna_values)
+        df_civ.loc[mask, "variant_reformatted"] = True
+
+        return df_civ.reset_index(drop=True)
+
+
     def _reformat_variant(self, df_civ):
         if self.category=="mut":
             return self._reformat_mut_variant(df_civ)
         elif self.category=="fus":
             return self._reformat_fus_variant(df_civ)
         elif self.category=="cna":
-            raise NotImplementedError
+            return self._reformat_cna_variant(df_civ)
 
 
     def _add_variant_identifier(self, df_civ):
@@ -428,7 +465,8 @@ class CivicPreprocessor(object):
         elif self.category=="fus":
             return build_alt_identifier(df_civ, self.category, col_gene_1="gene_1", col_gene_2="gene_2")
         elif self.category=="cna":
-            raise NotImplementedError
+            return build_alt_identifier(df_civ, self.category, col_gene="gene", col_alt="variant")
+
 
     def run(self, df_civ):
         self._check_args(df_civ)
@@ -541,8 +579,8 @@ class CivicAnnotator(object):
         y_gene_2 = y["Gene_2"]
 
         # possible matches are 
-        #  - A -> gene 1 match exactly and gene 2 match exactly
-        #  - B -> gene_1 match exactly and gene 2 match by Any or the other way around
+        #  - A -> gene 1 matches exactly and gene 2 matches exactly
+        #  - B -> gene_1 matches exactly and gene 2 matches by Any or the other way around
         if x_gene_1 == y_gene_1 and x_gene_2 == y_gene_2:
             return (True, "A")
         else:
@@ -550,6 +588,31 @@ class CivicAnnotator(object):
                 return (y_gene_2==x_gene_2 or y_gene_1==x_gene_2, "B")
             elif x_gene_2 == "Any":
                 return (y_gene_2==x_gene_1 or y_gene_1==x_gene_1, "B")
+
+        return (False, "F")
+
+
+    def _is_match_cna(self, x, y):
+        # extract values required to assess the match
+        x_gene = x["gene"]
+        y_gene = y["Hugo_Symbol"]
+        x_alt = x["variant"]
+        y_alt = y["Alteration"].upper()
+
+        # possible matches are 
+        #  - A -> gene matches exactly and variant matches exactly
+        #  - B -> gene matches exactly and variant matches by transitivity
+        #     * DELETION matches to LOSS and DELETION
+        #     * AMPLIFICATION matches to AMPLIFICATION
+        #     * LOH matches to LOH and CN LOH
+        if x_gene == y_gene and x_alt == y_alt:
+            return (True, "A")
+        else:
+            if x_gene == y_gene:
+                if y_alt == "DELETION" and x_alt in ["DELETION", "LOSS"]:
+                    return (True, "B")
+                elif y_alt == "LOH" and x_alt in ["LOH", "CN LOH"]:
+                    return (True, "B")
 
         return (False, "F")
 
@@ -662,13 +725,34 @@ class CivicAnnotator(object):
             return pd.concat(ys, axis=0)
 
 
+    def _annotate_cna(self, df_civ, df_alt):
+        x_genes = set(df_civ["gene"].dropna())
+        y_genes = set(df_alt["Hugo_Symbol"].dropna())
+
+        if len(x_genes.intersection(y_genes))==0:
+            print("-CIViC database and input cnas table have no gene in common, no annotation.")
+            return df_alt.copy()
+        else:
+            ys = []
+            for _, y in df_alt.iterrows():
+                y_gene = y["Hugo_Symbol"]
+                if y_gene in x_genes:
+                    for _, x in df_civ.loc[df_civ["gene"]==y_gene].iterrows():
+                        is_match, match_type = self._is_match_cna(x, y)
+                        if is_match:
+                            y = self._add_annotations(x, y, match_type)
+                ys.append(y.to_frame().T)
+
+            return pd.concat(ys, axis=0)
+
+
     def run(self, df_civ, df_alt):
         if self.category=="mut":
             df_ann = self._annotate_mut(df_civ, df_alt)
         elif self.category=="fus":
             df_ann = self._annotate_fus(df_civ, df_alt)
         elif self.category=="cna":
-            raise NotImplementedError
+            df_ann = self._annotate_cna(df_civ, df_alt)
 
         # print info about numbers of variants annotated
         if "CIViC_Matching_Variant" in df_ann.columns:
@@ -716,14 +800,14 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Add Tumor_Sample and Normal_Sample fields.")
     parser.add_argument('--input', type=str, help='Path to input table of variants.',
-                        default="examples/data/example_fus.tsv")
+                        default="examples/data/example_cna.tsv")
     parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
                         default="data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
                         default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
-    parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='fus')
+    parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='cna')
     parser.add_argument('--tumor_types', type=str, help='Tumor type designations in CIViC, separated with |.',
-            default='Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer')
+            default='Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer')
     parser.add_argument('--output', type=str, help='Path to output table of variants.')
     args = parser.parse_args()
 

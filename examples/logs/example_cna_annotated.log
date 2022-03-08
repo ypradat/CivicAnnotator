@@ -1,0 +1,22 @@
+input: examples/data/example_cna.tsv
+civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
+rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
+category: cna
+tumor_types: Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer
+output: examples/data/example_cna_annotated.tsv
+
+
+-INFO: selected 652/3855 evidence lines corresponding to the following tumor types: 
+	Lung Cancer
+	Lung Carcinoma
+	Lung Non-small Cell Carcinoma
+	Lung Adenocarcinoma
+	Solid Tumor
+	Cancer
+-INFO: selected 39/652 evidence lines corresponding to the cna category
+-INFO: excluded 0/39 evidence lines having the following values of evidence_type: Predisposing,Functional,N/A
+-INFO: excluded 11/39 evidence lines having the following values of evidence_direction: Does Not Support,N/A
+-INFO: excluded 0/28 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,N/A,Neomorphic
+-INFO: excluded 6/28 evidence lines having the following values of variant_origin: Rare Germline,Common Germline,N/A
+-INFO: excluded 0/22 evidence lines manually reviewed
+-INFO: 27/138 lines from the input table of alterations were matched in CIViC
