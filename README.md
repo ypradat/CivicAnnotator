@@ -12,7 +12,7 @@ with
 - **Direction**: either *N* (Negative) or *P* (Positive).
 - **Level**: one of the 5 levels *A, B, C, D* and *E* used by CIViC.
 
-**NOTE**: not all possible combinations of these tree tags are automatically added to the input table in order to avoid
+**NOTE**: not all possible combinations of these three tags are automatically added to the input table in order to avoid
 completely empty columns.
 
 The script will also add the following 3 columns that detail how the alteration was matched in CIViC in order to
