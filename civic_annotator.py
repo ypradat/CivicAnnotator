@@ -439,8 +439,9 @@ class CivicPreprocessor(object):
         df_civ["variant"] = df_civ["variant"].replace(old2new)
 
         # split CNV into DELETION, LOSS, CN LOH, AMPLIFICATION
-        df_civ["variant"] = df_civ["variant"].replace({"CNV": "/".join(cna_values)})
-        df_civ = explode_df(df_civ, cols=["variant"], sep="/")
+        if df_civ.shape[0] > 0:
+            df_civ["variant"] = df_civ["variant"].replace({"CNV": "/".join(cna_values)})
+            df_civ = explode_df(df_civ, cols=["variant"], sep="/")
 
         # expected values
         mask = df_civ["variant"].isin(cna_values)
