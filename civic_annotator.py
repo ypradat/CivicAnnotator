@@ -831,8 +831,7 @@ def main(args):
         df_ann = pd.concat(dfs_ann)
 
         if df_ann.shape[0]>0 and "CIViC_Matching_Disease" in df_ann:
-            # select and order columns
-            df_ann = df_ann.loc[~df_ann["CIViC_Matching_Disease"].isnull()].copy()
+            # order columns
             cols_civ = get_columns_civic()
             cols_new = list(set(df_ann.columns.tolist()).difference(set(cols_old)))
             cols_new_ord = [x for x in cols_civ if x in cols_new]
