@@ -2,10 +2,12 @@ input: examples/data/example_maf.tsv
 civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
 rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
 category: mut
-tumor_types: Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer
 output: examples/data/example_maf_annotated.tsv
 
 
+-INFO: the civic annotator will process 1 groups of samples from 1 different tumor types...
+========================================
+-INFO: processing 6 lines from tumor type Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer
 -INFO: selected 652/3855 evidence lines corresponding to the following tumor types: 
 	Lung Cancer
 	Lung Carcinoma
@@ -14,9 +16,11 @@ output: examples/data/example_maf_annotated.tsv
 	Solid Tumor
 	Cancer
 -INFO: selected 370/652 evidence lines corresponding to the mut category
--INFO: excluded 4/370 evidence lines having the following values of evidence_type: Predisposing,Functional,N/A
--INFO: excluded 58/366 evidence lines having the following values of evidence_direction: Does Not Support,N/A
--INFO: excluded 6/308 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,N/A,Neomorphic
--INFO: excluded 10/302 evidence lines having the following values of variant_origin: Rare Germline,Common Germline,N/A
+-INFO: excluded 4/370 evidence lines having the following values of evidence_type: Predisposing,Functional
+-INFO: excluded 55/366 evidence lines having the following values of evidence_direction: Does Not Support
+-INFO: excluded 9/311 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,Is_N/A,Neomorphic
+-INFO: excluded 10/302 evidence lines having the following values of variant_origin: Rare Germline,Common Germline
 -INFO: excluded 20/292 evidence lines manually reviewed
 -INFO: 6/6 lines from the input table of alterations were matched in CIViC
+========================================
+-INFO: annotated table saved at examples/data/example_maf_annotated.tsv

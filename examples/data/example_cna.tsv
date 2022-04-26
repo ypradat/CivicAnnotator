@@ -1,139 +1,139 @@
-Sample_Id	Hugo_Symbol	Alteration
-A-Tumor	CDKN2A	Deletion
-A-Tumor	KRAS	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	RAC1	Amplification
-A-Tumor	CCNE1	Amplification
-A-Tumor	ERBB2	Amplification
-A-Tumor	RB1	Deletion
-A-Tumor	CDK4	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	TERT	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	TERT	Amplification
-A-Tumor	AKT1	Amplification
-A-Tumor	BRAF	Amplification
-A-Tumor	CCND3	Amplification
-A-Tumor	CDK6	Amplification
-A-Tumor	CXCR4	Amplification
-A-Tumor	EZH2	Amplification
-A-Tumor	FGFR4	Amplification
-A-Tumor	FOXA1	Amplification
-A-Tumor	MET	Amplification
-A-Tumor	MYC	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	PDGFRB	Amplification
-A-Tumor	SMO	Amplification
-A-Tumor	SRC	Amplification
-A-Tumor	TERT	Amplification
-A-Tumor	UBR5	Amplification
-A-Tumor	CARD11	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	ETV1	Amplification
-A-Tumor	RAC1	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	EZH2	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	CCND1	Amplification
-A-Tumor	TERT	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	KDM5A	Amplification
-A-Tumor	KRAS	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	AKT1	Amplification
-A-Tumor	KRAS	Amplification
-A-Tumor	CCND1	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	TERT	Amplification
-A-Tumor	CCND3	Amplification
-A-Tumor	RB1	Deletion
-A-Tumor	TP53	Deletion
-A-Tumor	CDKN2A	Deletion
-A-Tumor	RUNX1	Deletion
-A-Tumor	FOXA1	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	FOXA1	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	AKT3	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	TERT	Amplification
-A-Tumor	ETV1	Amplification
-A-Tumor	HLA-A	Deletion
-A-Tumor	CDKN2A	Deletion
-A-Tumor	MYC	Amplification
-A-Tumor	CARD11	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	ETV1	Amplification
-A-Tumor	RAC1	Amplification
-A-Tumor	MDM2	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	FOXA1	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	CDKN2A	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	ETV1	Amplification
-A-Tumor	TERT	Amplification
-A-Tumor	FOXA1	Amplification
-A-Tumor	MDM2	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	MDM2	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	SDHD	Deletion
-A-Tumor	BRAF	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	PTPRD	Deletion
-A-Tumor	TERT	Amplification
-A-Tumor	FGFR1	Amplification
-A-Tumor	CDK4	Amplification
-A-Tumor	EGFR	Amplification
-A-Tumor	ERBB3	Amplification
-A-Tumor	GLI1	Amplification
-A-Tumor	PTPRD	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	FOXA1	Amplification
-A-Tumor	NKX2-1	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	EGFR	Amplification
-A-Tumor	KDR	Amplification
-A-Tumor	KIT	Amplification
-A-Tumor	PDGFRA	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	SMARCA4	Deletion
-A-Tumor	KDM5A	Amplification
-A-Tumor	PTEN	Deletion
-A-Tumor	FGFR1	Amplification
-A-Tumor	CCND1	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	KDM5A	Amplification
-A-Tumor	KRAS	Amplification
-A-Tumor	KRAS	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	NKX2-1	Amplification
-A-Tumor	CDH1	Deletion
-A-Tumor	MYC	Amplification
-A-Tumor	MYC	Amplification
-A-Tumor	UBR5	Amplification
-A-Tumor	CCND1	Amplification
-A-Tumor	MDM2	Amplification
-A-Tumor	MYC	Amplification
-A-Tumor	CDK4	Amplification
-A-Tumor	ERBB2	Amplification
-A-Tumor	TP53	Deletion
-A-Tumor	NKX2-1	Amplification
-A-Tumor	AKT2	Amplification
-A-Tumor	CCNE1	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	TERT	Amplification
-A-Tumor	CDKN2A	Deletion
-A-Tumor	PTPRD	Deletion
+Sample_Id	Civic_Disease	Hugo_Symbol	Alteration
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK6	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CXCR4	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR4	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MET	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRB	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMO	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SRC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RUNX1	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT3	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	HLA-A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SDHD	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB3	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	GLI1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDR	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KIT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRA	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMARCA4	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTEN	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDH1	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT2	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion

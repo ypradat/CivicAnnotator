@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @created: Jan 14 2022
-@modified: Mar 08 2022
+@modified: Apr 26 2022
 @author: Yoann Pradat
 
     CentraleSupelec
@@ -189,10 +189,10 @@ class CivicPreprocessor(object):
 
 
     def _filter_tumor_types(self, df_civ):
-        if args.tumor_types is not None and len(args.tumor_types)>0:
-            mask = df_civ["disease"].isin(args.tumor_types)
+        if self.tumor_types is not None and len(self.tumor_types)>0:
+            mask = df_civ["disease"].isin(self.tumor_types)
             print("-INFO: selected %s/%s evidence lines corresponding to the following tumor types: \n\t%s" \
-                  % (sum(mask), len(mask), "\n\t".join(args.tumor_types)))
+                  % (sum(mask), len(mask), "\n\t".join(self.tumor_types)))
             return df_civ.loc[mask].copy()
         else:
             return df_civ
@@ -211,10 +211,9 @@ class CivicPreprocessor(object):
 
         # exclude rows for which the column `col` contains any of the values in `vals`
         df_rul = pd.read_excel(self.rules, sheet_name="CIViC_Exclude_Values")
-        df_rul = df_rul.fillna("N/A")
         for col in df_rul:
-            vals = df_rul[col].unique()
-            mask = df_sub[col].fillna("N/A").isin(vals)
+            vals = df_rul[col].dropna().unique()
+            mask = df_sub[col].fillna("Is_N/A").isin(vals)
             print("-INFO: excluded %s/%s evidence lines having the following values of %s: %s" % \
                   (sum(mask), len(mask), col, ",".join(vals)))
             df_sub = df_sub.loc[~mask].copy()
@@ -768,6 +767,34 @@ class CivicAnnotator(object):
         return df_ann[cols_alt + sorted(cols_new)]
 
 
+def annotate_tumor_types(df_alt, civic, tumor_types, category, rules):
+    # load CIViC database
+    df_civ = pd.read_excel(civic)
+
+    # split tumor types
+    tumor_types_split = tumor_types.split("|")
+
+    # apply a series of filters on CIViC table to select only relevant lines
+    preprocessor = CivicPreprocessor(tumor_types=tumor_types_split, category=category, rules=rules)
+    df_civ = preprocessor.run(df_civ)
+
+    # perform the annotation
+    annotator = CivicAnnotator(category=category, rules=rules)
+    df_ann = annotator.run(df_civ, df_alt)
+    df_ann = clean_alt_identifier(df_ann, category)
+
+    return df_ann
+
+
+def get_columns_civic():
+    return ["CIViC_Matching_Disease", "CIViC_Matching_Type", "CIViC_Matching_Variant",
+            "Predictive:N:A","Predictive:N:B","Predictive:N:C","Predictive:N:D","Predictive:N:E",
+            "Predictive:P:A","Predictive:P:B","Predictive:P:C","Predictive:P:D","Predictive:P:E",
+            "Diagnostic:N:A","Diagnostic:N:B","Diagnostic:N:C","Diagnostic:N:D","Diagnostic:N:E",
+            "Diagnostic:P:A","Diagnostic:P:B","Diagnostic:P:C","Diagnostic:P:D","Diagnostic:P:E",
+            "Prognostic:N:A","Prognostic:N:B","Prognostic:N:C","Prognostic:N:D","Prognostic:N:E",
+            "Prognostic:P:A","Prognostic:P:B","Prognostic:P:C","Prognostic:P:D","Prognostic:P:E"]
+
 def main(args):
     # load input alterations table
     df_alt = pd.read_table(args.input)
@@ -775,26 +802,49 @@ def main(args):
     if df_alt.shape[0]==0:
         df_ann = df_alt.copy()
     else:
+        cols_old = df_alt.columns.tolist()
+
         # build identifier
         df_alt = build_alt_identifier(df_alt, args.category)
 
-        # transform input tumor types to list
-        args.tumor_types = args.tumor_types.split("|")
+        # checks
+        if "Civic_Disease" not in df_alt:
+            raise ValueError("-ERROR: the column Civic_Disease is absent from the input table %s." % args.input)
+        elif df_alt["Civic_Disease"].isnull().sum() > 0:
+            raise ValueError("-ERROR: the column Civic_Disease from the input table %s contains NaN." % args.input)
 
-        # load and process CIViC table
-        df_civ = pd.read_excel(args.civic)
+        # annotate group of samples sharing same tumor types
+        tumor_types_all = df_alt["Civic_Disease"].unique().tolist()
+        print("-INFO: the civic annotator will process %d groups of samples from %d different tumor types..." %
+              (len(tumor_types_all), len(tumor_types_all)))
 
-        # apply a series of filters on CIViC table to select only relevant lines
-        preprocessor = CivicPreprocessor(tumor_types=args.tumor_types, category=args.category, rules=args.rules)
-        df_civ = preprocessor.run(df_civ)
+        dfs_ann = []
+        for tumor_types in tumor_types_all:
+            df_alt_sub = df_alt.loc[df_alt["Civic_Disease"]==tumor_types].copy()
+            print("="*40)
+            print("-INFO: processing %d lines from tumor type %s" % (len(df_alt_sub), tumor_types))
+            df_ann_sub = annotate_tumor_types(df_alt=df_alt_sub, civic=args.civic, tumor_types=tumor_types,
+                                              category=args.category, rules=args.rules)
+            dfs_ann.append(df_ann_sub)
 
-        # perform the annotation
-        annotator = CivicAnnotator(category=args.category, rules=args.rules)
-        df_ann = annotator.run(df_civ, df_alt)
-        df_ann = clean_alt_identifier(df_ann, args.category)
+        # concatenate annotated samples per group of tumor type
+        df_ann = pd.concat(dfs_ann)
+
+        if df_ann.shape[0]>0 and "CIViC_Matching_Disease" in df_ann:
+            # select and order columns
+            df_ann = df_ann.loc[~df_ann["CIViC_Matching_Disease"].isnull()].copy()
+            cols_civ = get_columns_civic()
+            cols_new = list(set(df_ann.columns.tolist()).difference(set(cols_old)))
+            cols_new_ord = [x for x in cols_civ if x in cols_new]
+            df_ann = df_ann[cols_old + cols_new_ord]
+        else:
+            # empty dataframe
+            df_ann = df_ann.iloc[:0,:]
 
     # save
+    print("="*40)
     df_ann.to_csv(args.output, sep="\t", index=False)
+    print("-INFO: annotated table saved at %s" % args.output)
 
 # run ==================================================================================================================
 
@@ -807,8 +857,6 @@ if __name__ == "__main__":
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
                         default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
     parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='cna')
-    parser.add_argument('--tumor_types', type=str, help='Tumor type designations in CIViC, separated with |.',
-            default='Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer')
     parser.add_argument('--output', type=str, help='Path to output table of variants.')
     args = parser.parse_args()
 
