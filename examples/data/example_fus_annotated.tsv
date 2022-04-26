@@ -1,2 +1,24 @@
 Sample_Id	Civic_Disease	Fusion_Id	Gene_1	Gene_2	CIViC_Matching_Disease	CIViC_Matching_Type	CIViC_Matching_Variant	Predictive:P:B
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ESR1--CCDC170	ESR1	CCDC170				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	GPBP1--MAP3K1	GPBP1	MAP3K1				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ESR1--CCDC170	ESR1	CCDC170				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	LPIN3--PTPRT	LPIN3	PTPRT				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ARCN1--KMT2A	ARCN1	KMT2A				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	NF1--CDK12	NF1	CDK12				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ARID4B--B3GALNT2	ARID4B	B3GALNT2				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	NF1--RNF135	NF1	RNF135				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	HIKESHI--PTEN	HIKESHI	PTEN				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	CHEK2--SLC25A19	CHEK2	SLC25A19				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	SLC25A19--CHEK2	SLC25A19	CHEK2				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	PIK3R1--LRRC32	PIK3R1	LRRC32				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	MPP7--MLLT10	MPP7	MLLT10				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	IGF2BP1--RNF43	IGF2BP1	RNF43				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ERLIN2--FGFR1	ERLIN2	FGFR1				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	KDM4B--STK11	KDM4B	STK11				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	TOP1--BLCAP	TOP1	BLCAP				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	ZNF276--EZH2	ZNF276	EZH2				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	MXI1--TCF7L2	MXI1	TCF7L2				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	PTEN--INTS4	PTEN	INTS4				
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	TCF7L2--MXI1	TCF7L2	MXI1				
 C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	FGFR2--BAG3	FGFR2	BAG3	Cancer	B	Fusion	Erdafitinib
+C-Tumor	Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer	PLXNA2--TP53	PLXNA2	TP53				
