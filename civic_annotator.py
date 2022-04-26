@@ -808,14 +808,21 @@ def main(args):
         df_alt = build_alt_identifier(df_alt, args.category)
 
         # checks
-        if "Civic_Disease" not in df_alt:
-            raise ValueError("-ERROR: the column Civic_Disease is absent from the input table %s." % args.input)
-        elif df_alt["Civic_Disease"].isnull().sum() > 0:
-            raise ValueError("-ERROR: the column Civic_Disease from the input table %s contains NaN." % args.input)
+        if len(args.tumor_types) > 0:
+            print("-INFO: using tumor types from option --tumor_types")
+            tumor_types_all = args.tumor_types
+        else:
+            if "Civic_Disease" not in df_alt:
+                raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
+                                 " Civic_Disease is absent from the input table %s." % args.input)
+            elif df_alt["Civic_Disease"].isnull().sum() > 0:
+                raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
+                                 " Civic_Disease from the input table %s contains NaN." % args.input)
+            tumor_types_all = df_alt["Civic_Disease"].unique().tolist()
 
         # annotate group of samples sharing same tumor types
-        tumor_types_all = df_alt["Civic_Disease"].unique().tolist()
-        print("-INFO: the civic annotator will process %d groups of samples from %d different tumor types..." %
+        # NOTE: the value of --tumor_types has priority over the presence the values of Civic_Disease.
+        print("-INFO: the civic annotator will process %d group(s) of samples from %d different tumor type(s)..." %
               (len(tumor_types_all), len(tumor_types_all)))
 
         dfs_ann = []
@@ -856,6 +863,10 @@ if __name__ == "__main__":
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
                         default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
     parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='cna')
+    parser.add_argument('--tumor_types', type=str, default='',
+                        help="Tumor type designations in CIViC, separated with |. In case the input table" +
+                        " contains Civic_Disease column, the value of this option has priority over the values of"
+                        " Civic_Disease column.")
     parser.add_argument('--output', type=str, help='Path to output table of variants.')
     args = parser.parse_args()
 
