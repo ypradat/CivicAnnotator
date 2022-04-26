@@ -810,7 +810,9 @@ def main(args):
         # checks
         if len(args.tumor_types) > 0:
             print("-INFO: using tumor types from option --tumor_types")
-            tumor_types_all = args.tumor_types
+            print("-INFO: processing %d lines from tumor type %s" % (len(df_alt), args.tumor_types))
+            df_ann = annotate_tumor_types(df_alt=df_alt, civic=args.civic, tumor_types=args.tumor_types,
+                                          category=args.category, rules=args.rules)
         else:
             if "Civic_Disease" not in df_alt:
                 raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
@@ -818,24 +820,25 @@ def main(args):
             elif df_alt["Civic_Disease"].isnull().sum() > 0:
                 raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
                                  " Civic_Disease from the input table %s contains NaN." % args.input)
+
             tumor_types_all = df_alt["Civic_Disease"].unique().tolist()
 
-        # annotate group of samples sharing same tumor types
-        # NOTE: the value of --tumor_types has priority over the presence the values of Civic_Disease.
-        print("-INFO: the civic annotator will process %d group(s) of samples from %d different tumor type(s)..." %
-              (len(tumor_types_all), len(tumor_types_all)))
+            # annotate group of samples sharing same tumor types
+            # NOTE: the value of --tumor_types has priority over the presence the values of Civic_Disease.
+            print("-INFO: the civic annotator will process %d group(s) of samples from %d different tumor type(s)..." %
+                  (len(tumor_types_all), len(tumor_types_all)))
 
-        dfs_ann = []
-        for tumor_types in tumor_types_all:
-            df_alt_sub = df_alt.loc[df_alt["Civic_Disease"]==tumor_types].copy()
-            print("="*40)
-            print("-INFO: processing %d lines from tumor type %s" % (len(df_alt_sub), tumor_types))
-            df_ann_sub = annotate_tumor_types(df_alt=df_alt_sub, civic=args.civic, tumor_types=tumor_types,
-                                              category=args.category, rules=args.rules)
-            dfs_ann.append(df_ann_sub)
+            dfs_ann = []
+            for tumor_types in tumor_types_all:
+                df_alt_sub = df_alt.loc[df_alt["Civic_Disease"]==tumor_types].copy()
+                print("="*40)
+                print("-INFO: processing %d lines from tumor type %s" % (len(df_alt_sub), tumor_types))
+                df_ann_sub = annotate_tumor_types(df_alt=df_alt_sub, civic=args.civic, tumor_types=tumor_types,
+                                                  category=args.category, rules=args.rules)
+                dfs_ann.append(df_ann_sub)
 
-        # concatenate annotated samples per group of tumor type
-        df_ann = pd.concat(dfs_ann)
+            # concatenate annotated samples per group of tumor type
+            df_ann = pd.concat(dfs_ann)
 
         if df_ann.shape[0]>0 and "CIViC_Matching_Disease" in df_ann:
             # order columns
