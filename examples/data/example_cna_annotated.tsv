@@ -1,139 +1,139 @@
-Sample_Id	Civic_Disease	Hugo_Symbol	Alteration	CIViC_Matching_Disease	CIViC_Matching_Type	CIViC_Matching_Variant	Predictive:N:C	Predictive:N:D	Predictive:P:B	Predictive:P:C	Predictive:P:D	Prognostic:N:B	Prognostic:P:B
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification	Lung Non-small Cell Carcinoma;Lung Adenocarcinoma	A;A	AMPLIFICATION;AMPLIFICATION	Gefitinib|Erlotinib				Trastuzumab Emtansine		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK6	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CXCR4	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR4	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MET	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma;Lung Adenocarcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma;Lung Non-small Cell Carcinoma;Cancer	A;A;A;A;A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION	Erlotinib|Gefitinib	Gefitinib		Crizotinib;Crizotinib;Crizotinib;Crizotinib;Crizotinib	Crizotinib		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRB	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMO	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SRC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION						Y	
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION						Y	
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RUNX1	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT3	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	HLA-A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SDHD	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION			Dovitinib		PD173074	Y	Y
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB3	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	GLI1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDR	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KIT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRA	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION					Sunitinib		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMARCA4	Deletion	Lung Non-small Cell Carcinoma	B	LOSS					Abemaciclib|Palbociclib		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTEN	Deletion	Cancer;Cancer	B;B	LOSS;LOSS			Buparlisib+Carboplatin+Paclitaxel		Capivasertib		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	AMPLIFICATION;AMPLIFICATION;AMPLIFICATION;AMPLIFICATION			Dovitinib		PD173074	Y	Y
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION						Y	
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDH1	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	AMPLIFICATION						Y	
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification	Lung Non-small Cell Carcinoma;Lung Adenocarcinoma	A;A	AMPLIFICATION;AMPLIFICATION	Gefitinib|Erlotinib				Trastuzumab Emtansine		
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT2	Amplification	Lung Adenocarcinoma	A	AMPLIFICATION				Vandetanib+Everolimus			
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion										
-A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion										
+Sample_Id	Civic_Disease	Hugo_Symbol	Alteration	CIViC_Matching_Disease	CIViC_Matching_Type	CIViC_Matching_Gene_Variant	CIViC_Matching_Evidence_Id	CIViC_Matching_Citation	Predictive:N:C	Predictive:N:D	Predictive:P:B	Predictive:P:C	Predictive:P:D	Prognostic:N:B	Prognostic:P:B
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification	Lung Non-small Cell Carcinoma;Lung Adenocarcinoma	A;A	ERBB2 AMPLIFICATION;ERBB2 AMPLIFICATION	1050;1393	Cretella et al., 2014, Mol. Cancer;Yu et al., 2013, Clin. Cancer Res.	Gefitinib|Erlotinib				Trastuzumab Emtansine		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK6	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CXCR4	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR4	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MET	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma;Lung Adenocarcinoma;Lung Non-small Cell Carcinoma;Lung Adenocarcinoma;Lung Non-small Cell Carcinoma;Cancer	A;A;A;A;A;A;A;A	MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION;MET AMPLIFICATION	733;735;836;1392;1566;1692;1713;1714	Engelman et al., 2007, Science;Ou et al., 2011, J Thorac Oncol;Zhang et al., 2016, J Thorac Oncol;Yu et al., 2013, Clin. Cancer Res.;Tanizaki et al., 2011, J Thorac Oncol;Le et al., 2015, Clin Lung Cancer;Caparica et al., 2017, J Thorac Oncol;Palma et al., 2014, Case Rep Oncol	Erlotinib|Gefitinib	Gefitinib		Crizotinib;Crizotinib;Crizotinib;Crizotinib;Crizotinib	Crizotinib		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRB	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMO	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SRC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EZH2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	CCND1 AMPLIFICATION	354	Gautschi et al., 2007, Lung Cancer						Y	
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	CCND1 AMPLIFICATION	354	Gautschi et al., 2007, Lung Cancer						Y	
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND3	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RB1	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RUNX1	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT3	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	HLA-A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CARD11	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	RAC1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ETV1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SDHD	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	BRAF	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION	684;685;686;3027	Tran et al., 2013, Lung Cancer;Chang et al., 2014, PLoS ONE;Dutt et al., 2011, PLoS ONE;Lim et al., 2016, Cancer			Dovitinib		PD173074	Y	Y
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB3	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	GLI1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FOXA1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	EGFR	Amplification	Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION;EGFR AMPLIFICATION	948;3015;5924;5925	Dahabreh et al., 2011, Ann. Oncol.;Nukaga et al., 2017, Cancer Res.;Dahabreh et al., 2011, Ann. Oncol.;Zhang et al., 2017, J. Investig. Med.		Rociletinib|Osimertinib	Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor;Gefitinib|Erlotinib;Gefitinib|Erlotinib				
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDR	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KIT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PDGFRA	Amplification	Lung Non-small Cell Carcinoma	A	PDGFRA AMPLIFICATION	1771	McDermott et al., 2009, Cancer Res.					Sunitinib		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	SMARCA4	Deletion	Lung Non-small Cell Carcinoma	B	SMARCA4 LOSS	7155	Xue et al., 2019, Nat Commun					Abemaciclib|Palbociclib		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTEN	Deletion	Cancer;Cancer	B;B	PTEN LOSS;PTEN LOSS	714;1502	Hyman et al., 2015, Cancer Chemother. Pharmacol.;Davies et al., 2012, Mol. Cancer Ther.			Buparlisib+Carboplatin+Paclitaxel		Capivasertib		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	FGFR1	Amplification	Lung Non-small Cell Carcinoma;Cancer;Lung Non-small Cell Carcinoma;Lung Non-small Cell Carcinoma	A;A;A;A	FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION;FGFR1 AMPLIFICATION	684;685;686;3027	Tran et al., 2013, Lung Cancer;Chang et al., 2014, PLoS ONE;Dutt et al., 2011, PLoS ONE;Lim et al., 2016, Cancer			Dovitinib		PD173074	Y	Y
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	CCND1 AMPLIFICATION	354	Gautschi et al., 2007, Lung Cancer						Y	
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KDM5A	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	KRAS	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDH1	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	UBR5	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCND1	Amplification	Lung Non-small Cell Carcinoma	A	CCND1 AMPLIFICATION	354	Gautschi et al., 2007, Lung Cancer						Y	
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MDM2	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	MYC	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDK4	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	ERBB2	Amplification	Lung Non-small Cell Carcinoma;Lung Adenocarcinoma	A;A	ERBB2 AMPLIFICATION;ERBB2 AMPLIFICATION	1050;1393	Cretella et al., 2014, Mol. Cancer;Yu et al., 2013, Clin. Cancer Res.	Gefitinib|Erlotinib				Trastuzumab Emtansine		
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TP53	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	NKX2-1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	AKT2	Amplification	Lung Adenocarcinoma	A	AKT2 AMPLIFICATION	1621	Subbiah et al., 2015, Lung Cancer				Vandetanib+Everolimus			
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CCNE1	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	TERT	Amplification												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	CDKN2A	Deletion												
+A-Tumor	Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer	PTPRD	Deletion												

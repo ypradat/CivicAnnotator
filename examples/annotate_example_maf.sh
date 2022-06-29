@@ -7,7 +7,7 @@ category=mut
 out=examples/data/example_maf_annotated.tsv
 log=examples/logs/example_maf_annotated.log
 
-python civic_annotator.py \
+python civic.py \
     --input ${maf} \
     --civic ${civ} \
     --rules ${rul} \

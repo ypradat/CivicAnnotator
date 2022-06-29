@@ -1,0 +1,27 @@
+input: examples/data/example_alt.tsv
+civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
+rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
+category: alt
+tumor_types: 
+output: examples/data/example_alt_annotated.tsv
+
+
+-INFO: the civic annotator will process 1 group(s) of samples from 1 different tumor type(s)...
+========================================
+-INFO: processing 19 lines from tumor type Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer
+-INFO: selected 652/3855 evidence lines corresponding to the following tumor types: 
+	Lung Cancer
+	Lung Carcinoma
+	Lung Non-small Cell Carcinoma
+	Lung Adenocarcinoma
+	Solid Tumor
+	Cancer
+-INFO: selected 85/652 evidence lines corresponding to the alt category
+-INFO: excluded 0/85 evidence lines having the following values of evidence_type: Predisposing,Functional
+-INFO: excluded 9/85 evidence lines having the following values of evidence_direction: Does Not Support
+-INFO: excluded 0/76 evidence lines having the following values of clinical_significance: Adverse Response,Uncertain Significance,Is_N/A,Neomorphic
+-INFO: excluded 0/76 evidence lines having the following values of variant_origin: Rare Germline,Common Germline
+-INFO: excluded 0/76 evidence lines manually reviewed
+-INFO: 2 combinations from the input table of alterations were matched in CIViC
+========================================
+-INFO: annotated table saved at examples/data/example_alt_annotated.tsv

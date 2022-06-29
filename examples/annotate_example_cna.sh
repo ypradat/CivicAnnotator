@@ -7,7 +7,7 @@ category=cna
 out=examples/data/example_cna_annotated.tsv
 log=examples/logs/example_cna_annotated.log
 
-python civic_annotator.py \
+python civic.py \
     --input ${cna} \
     --civic ${civ} \
     --rules ${rul} \

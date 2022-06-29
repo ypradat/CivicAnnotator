@@ -2,10 +2,11 @@ input: examples/data/example_maf.tsv
 civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
 rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
 category: mut
+tumor_types: 
 output: examples/data/example_maf_annotated.tsv
 
 
--INFO: the civic annotator will process 1 groups of samples from 1 different tumor types...
+-INFO: the civic annotator will process 1 group(s) of samples from 1 different tumor type(s)...
 ========================================
 -INFO: processing 6 lines from tumor type Lung Cancer|Lung Carcinoma|Lung Non-small Cell Carcinoma|Lung Adenocarcinoma|Solid Tumor|Cancer
 -INFO: selected 652/3855 evidence lines corresponding to the following tumor types: 

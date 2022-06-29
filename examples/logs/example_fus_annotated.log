@@ -2,10 +2,11 @@ input: examples/data/example_fus.tsv
 civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
 rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
 category: fus
+tumor_types: 
 output: examples/data/example_fus_annotated.tsv
 
 
--INFO: the civic annotator will process 1 groups of samples from 1 different tumor types...
+-INFO: the civic annotator will process 1 group(s) of samples from 1 different tumor type(s)...
 ========================================
 -INFO: processing 23 lines from tumor type Breast Cancer|Breast Carcinoma|Estrogen-receptor Positive Breast Cancer|Her2-receptor Negative Breast Cancer|Solid Tumor|Cancer
 -INFO: selected 344/3855 evidence lines corresponding to the following tumor types: 

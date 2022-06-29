@@ -1,14 +1,14 @@
 #!/bin/bash
 
-fus=examples/data/example_fus.tsv
+alt=examples/data/example_alt.tsv
 civ=data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
 rul=data/CIViC_Curation_And_Rules_Mutation.xlsx
-category=fus
-out=examples/data/example_fus_annotated.tsv
-log=examples/logs/example_fus_annotated.log
+category=alt
+out=examples/data/example_alt_annotated.tsv
+log=examples/logs/example_alt_annotated.log
 
 python civic.py \
-    --input ${fus} \
+    --input ${alt} \
     --civic ${civ} \
     --rules ${rul} \
     --category ${category} \

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @created: Jan 14 2022
-@modified: Apr 26 2022
+@modified: May 13 2022
 @author: Yoann Pradat
 
     CentraleSupelec
@@ -12,471 +12,23 @@
     Prism Center
     114 rue Edouard Vaillant, Villejuif, 94800 France
 
-Use CIViC database to annotate variants.
+Class for annotating a set of alterations using the preprocessed CIViC database (variant filtered and reformatted).
 """
 
-import argparse
 import numpy as np
 import pandas as pd
-import re
 
-AMINO_ACIDS = {"Ala": "A",
-               "Arg": "R",
-               "Asn": "N",
-               "Asp": "D",
-               "Cys": "C",
-               "Gln": "Q",
-               "Glu": "E",
-               "Gly": "G",
-               "His": "H",
-               "Ile": "I",
-               "Leu": "L",
-               "Lys": "K",
-               "Met": "M",
-               "Phe": "F",
-               "Pro": "P",
-               "Pyl": "O",
-               "Ser": "S",
-               "Sec": "U",
-               "Thr": "T",
-               "Trp": "W",
-               "Tyr": "Y",
-               "Val": "V",
-               "Asx": "B",
-               "Glx": "Z",
-               "Xaa": "X",
-               "Xle": "J",
-               "Ter": "*"}
-
-AMINO_ACIDS_REV = {v: k for k,v in AMINO_ACIDS.items()}
-
-# functions ============================================================================================================
-
-def explode_df(df, cols, sep=',', fill_value='', preserve_index=False):
-    # transform comma-separated to list
-    df = df.assign(**{col:df[col].str.split(sep) for col in cols}).copy()
-    if (cols is not None and len(cols) > 0 and not isinstance(cols, (list, tuple, np.ndarray, pd.Series))):
-        cols = [cols]
-    # calculate lengths of lists
-    lens = df[cols[0]].str.len()
-    # format NaN to [NaN] and strip unwanted characters
-    for col in cols:
-        df.loc[df[col].isnull(), col] = df.loc[df[col].isnull(), col].apply(lambda x: [np.nan])
-        df.loc[lens > 1, col] = df.loc[lens > 1, col].apply(lambda x: [y.strip() for y in x])
-    # all columns except `cols`
-    idx_cols = df.columns.difference(cols)
-    # preserve original index values    
-    idx = np.repeat(df.index.values, lens)
-    # create "exploded" DF
-    df_expanded = (pd.DataFrame({col:np.repeat(df[col].values, lens) for col in idx_cols},
-                index=idx).assign(**{col:np.concatenate(df.loc[lens>0, col].values) for col in cols}))
-    # append those rows that have empty lists
-    if (lens == 0).any():
-        # at least one list in cells is empty
-        df_expanded = (df_expanded.append(df.loc[lens==0, idx_cols], sort=False).fillna(fill_value))
-    # revert the original index order
-    df_expanded = df_expanded.sort_index()
-    # reset index if requested
-    if not preserve_index:
-        df_expanded = df_expanded.reset_index(drop=True)
-    return df_expanded
-
-
-def build_row_identifier(df, mode=1, verbose=False):
-    if mode==1:
-        cols_id = ["evidence_id", "variant_id", "gene_id"]
-    else:
-        cols_id = ["gene", "variant", "disease", "drugs", "evidence_type", "evidence_direction", "evidence_level",
-                   "clinical_significance"]
-    df["Row_Identifier"] = df[cols_id].fillna("-").astype(str).apply("_".join, axis=1)
-    n_unq = df["Row_Identifier"].nunique()
-    n_row = df.shape[0]
-    if verbose:
-        if n_unq < n_row:
-            print("-warning! %d unique values of Row_Identifier < %d rows" % (n_unq, n_row))
-    return df
-
-
-def build_mut_identifier(df, col_gene="Hugo_Symbol", col_start="Start_Position", col_end="End_Position",
-                         col_ref="Reference_Allele", col_alt="Tumor_Seq_Allele2"):
-    dfc = df.copy()
-    cols = [col_gene, col_start, col_end, col_ref, col_alt]
-    dfc[col_start] =  dfc[col_start].apply(lambda x: "%d" % x if not np.isnan(x) else "")
-    dfc[col_end] =  dfc[col_end].apply(lambda x: "%d" % x if not np.isnan(x) else "")
-    dfc["Mut_Identifier"] = dfc[cols].fillna("-").astype(str).apply("_".join, axis=1)
-    df["Mut_Identifier"] = dfc["Mut_Identifier"]
-    return df
-
-
-def build_fus_identifier(df, col_gene_1="Gene_1", col_gene_2="Gene_2"):
-    dfc = df.copy()
-    cols = [col_gene_1, col_gene_2]
-    dfc["Fus_Identifier"] = dfc[cols].fillna("N/A").astype(str).apply("--".join, axis=1)
-    df["Fus_Identifier"] = dfc["Fus_Identifier"]
-    return df
-
-
-def build_cna_identifier(df, col_gene="Hugo_Symbol", col_alt="Alteration"):
-    dfc = df.copy()
-    cols = [col_gene, col_alt]
-    dfc[col_alt] = dfc[col_alt].str.upper()
-    dfc["Cna_Identifier"] = dfc[cols].fillna("N/A").astype(str).apply("--".join, axis=1)
-    df["Cna_Identifier"] = dfc["Cna_Identifier"]
-    return df
-
-
-def build_alt_identifier(df, category, **kwargs):
-    if category=="mut":
-        return build_mut_identifier(df, **kwargs)
-    elif category=="fus":
-        return build_fus_identifier(df, **kwargs)
-    elif category=="cna":
-        return build_cna_identifier(df, **kwargs)
-    else:
-        raise ValueError("-ERROR! Unsupported value %s for category." %  category)
-
-
-def clean_alt_identifier(df, category):
-    if category=="mut":
-        del df["Mut_Identifier"]
-    elif category=="fus":
-        del df["Fus_Identifier"]
-    elif category=="cna":
-        del df["Cna_Identifier"]
-
-    return df
-
-
-def shorten_aa(x):
-    for aa_l, aa_s in AMINO_ACIDS.items():
-        x = x.replace(aa_l, aa_s)
-    return x
-
-
-def expand_aa(x):
-    x_split = list(x)
-    x_expan = []
-    for s in x_split:
-        if s in AMINO_ACIDS_REV:
-            x_expan.append(AMINO_ACIDS_REV[s])
-        else:
-            x_expan.append(s)
-    return "".join(x_expan)
-
-
-class CivicPreprocessor(object):
-    def __init__(self, tumor_types, category, rules):
-        self.tumor_types = tumor_types
-        self.category = category
-        self.rules = rules
-
-
-    def _check_args(self, df_civ):
-        # check tumor types
-        if self.tumor_types is not None and len(self.tumor_types)>0:
-            civ_tumor_types = df_civ["disease"].unique()
-            mis_tumor_types = set(self.tumor_types).difference(set(civ_tumor_types))
-            if len(mis_tumor_types)>0:
-                print("-WARNING! the following tumor types are absent from CIViC database!")
-                print("\t" + "\n\t".join(list(mis_tumor_types)))
-
-
-        # check category
-        allowed_categories = ["mut", "cna", "fus"]
-        if self.category not in allowed_categories:
-            raise ValueError("-the value of category %s is not recognized! Choose one of %s" % \
-                             (category, ",".join(allowed_categories)))
-
-
-    def _filter_tumor_types(self, df_civ):
-        if self.tumor_types is not None and len(self.tumor_types)>0:
-            mask = df_civ["disease"].isin(self.tumor_types)
-            print("-INFO: selected %s/%s evidence lines corresponding to the following tumor types: \n\t%s" \
-                  % (sum(mask), len(mask), "\n\t".join(self.tumor_types)))
-            return df_civ.loc[mask].copy()
-        else:
-            return df_civ
-
-
-    def _filter_category(self, df_civ):
-        long2short= {"mut": "m", "cna": "c", "fus": "f"}
-        mask = df_civ["category"]==long2short[self.category]
-        print("-INFO: selected %s/%s evidence lines corresponding to the %s category" % \
-              (sum(mask), len(mask), self.category))
-        return df_civ.loc[mask].copy()
-
-
-    def _filter_using_rules(self, df_civ):
-        df_sub = df_civ.copy()
-
-        # exclude rows for which the column `col` contains any of the values in `vals`
-        df_rul = pd.read_excel(self.rules, sheet_name="CIViC_Exclude_Values")
-        for col in df_rul:
-            vals = df_rul[col].dropna().unique()
-            mask = df_sub[col].fillna("Is_N/A").isin(vals)
-            print("-INFO: excluded %s/%s evidence lines having the following values of %s: %s" % \
-                  (sum(mask), len(mask), col, ",".join(vals)))
-            df_sub = df_sub.loc[~mask].copy()
-
-        # exclude rows manually excluded
-        df_rul = pd.read_excel(self.rules, sheet_name="CIViC_Exclude_Lines")
-        df_rul = build_row_identifier(df_rul, mode=1)
-        df_sub = build_row_identifier(df_sub, mode=1)
-
-        col = "Row_Identifier"
-        vals = df_rul["Row_Identifier"].unique()
-        mask = df_sub[col].isin(vals)
-        print("-INFO: excluded %s/%s evidence lines manually reviewed" % (sum(mask), len(mask)))
-        df_sub = df_sub.loc[~mask].copy()
-
-        return df_sub
-
-
-    def _match_specific_variant(self, x, variants):
-        if type(x)!=str:
-            return False
-        else:
-            if x.lower() in [v.lower() for v in variants]:
-                return True
-            else:
-                return False
-
-
-    def _split_hgvs_pc(self, x):
-        if "(c." in x:
-            hgvsp = x.split("(c.")[0].strip()
-            hgvsc_match = re.search("(?<=\()[\.\>\w\+\-\*]+(?=\))", x)
-            if hgvsc_match is not None:
-                hgvsc = hgvsc_match.group(0)
-            else:
-                hgvsc = np.nan
-        elif " c." in x:
-            hgvsp = x.split(" c.")[0].strip()
-            hgvsc = "c." + x.split(" c.")[1].strip()
-
-        if hgvsp in ["Splice Site", "Splice Region", "3'UTR alteration", "Intronic deletion"]:
-            hgvsp = np.nan
-        else:
-            hgvsp = "p." + expand_aa(hgvsp)
-
-        return [hgvsp, hgvsc]
-
-
-    def _reformat_mut_variant_aggregated(self, x):
-        regex = "^[A-Z]+[0-9]+[A-Z]+/[A-Z]+$"
-        match = re.search(regex, x)
-
-        if x in ["G12/G13", "V600/K601E"]:
-            return x
-        elif x=="V600E/K and Amplification":
-            return "V600E and Amplification/V600K and Amplification"
-        elif match is not None:
-            # the variant has the format [AA][XX][AA]/[AA] which should be transformed into [AA][XX][AA]/[AA][XX][AA]
-            x_split = x.split("/")
-            x_base = re.search("^[A-Z]+[0-9]+", x_split[0]).group(0)
-            return "/".join([x_split[0], x_base+x_split[1]])
-        else:
-            print("-warning! the variant %s has unrecognized specific format." % x)
-            return x
-
-
-    def _reformat_mut_variant(self, df_civ):
-        # where possible, build correct HGVSp and HGVSc entries. HGVS_Type will serve for specific matching rules
-        df_civ["variant_reformatted"] = False
-        df_civ["HGVSp"] = np.nan
-        df_civ["HGVS_Type"] = np.nan
-        df_civ["HGVSc"] = np.nan
-
-        # split variant aggregated by the "/" separator
-        mask = df_civ["variant"].apply(lambda x: "/" in x)
-        df_civ_a = df_civ.loc[mask].copy()
-        df_civ_b = df_civ.loc[~mask].copy()
-        if df_civ_a.shape[0]>0:
-            df_civ_a["variant"] = df_civ_a["variant"].apply(self._reformat_mut_variant_aggregated)
-            df_civ_a = explode_df(df_civ_a, cols=["variant"], sep="/")
-        df_civ = pd.concat((df_civ_a, df_civ_b), axis=0)
-
-        # don't reformat specific variants
-        df_rul = pd.read_excel(self.rules, sheet_name="CIViC_Variant_Matching")
-        mask = df_civ["variant"].apply(self._match_specific_variant, variants=df_rul["Variant"].unique())
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        mask = df_civ["variant"].apply(lambda x: ("(c." in x or " c." in x) if type(x)==str else False)
-        if sum(mask)>0:
-            df_split = df_civ.loc[mask, "variant"].apply(self._split_hgvs_pc).apply(pd.Series)
-            df_civ.loc[mask, "HGVSp"] = df_split.iloc[:,0]
-            df_civ.loc[mask, "HGVSc"] = df_split.iloc[:,1]
-            df_civ.loc[mask, "variant"] = df_civ.loc[mask, "variant"].apply(lambda x: x.split("(c.")[0].strip())
-            df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat partial HGVS protein format
-        regex_par = "^[A-Z]+[0-9]+$"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_par, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "partial"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein format sub
-        regex_sub = "^[A-Z\*]+[0-9]+[A-Z\*]+$"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_sub, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein del format
-        mask = ~df_civ["variant_reformatted"]
-        df_civ.loc[mask, "variant"] = df_civ.loc[mask, "variant"].str.replace("DEL", "del")
-
-        regex_del = "(^[A-Z]+[0-9]+del$)|(^[A-Z]+[0-9]+_[A-Z]+[0-9]+del$)"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_del, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein dup format
-        mask = ~df_civ["variant_reformatted"]
-        df_civ.loc[mask, "variant"] = df_civ.loc[mask, "variant"].str.replace("DUP", "dup")
-        regex_dup = "(^[A-Z]+[0-9]+dup$)|(^[A-Z]+[0-9]+_[A-Z]+[0-9]+dup$)"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_dup, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein ins format
-        mask = ~df_civ["variant_reformatted"]
-        df_civ.loc[mask, "variant"] = df_civ.loc[mask, "variant"].str.replace("DUP", "ins")
-        regex_ins = "(^[A-Z]+[0-9]+ins[A-Z]+$)|(^[A-Z]+[0-9]+_[A-Z]+[0-9]+ins[A-Z]+$)"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_ins, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein delins format
-        regex_delins = "(^[A-Z]+[0-9]+delins[A-Z]+$)|(^[A-Z]+[0-9]+_[A-Z]+[0-9]+delins[A-Z]+$)"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_delins, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVS protein frameshift format
-        mask = ~df_civ["variant_reformatted"]
-        df_civ.loc[mask, "variant"] = df_civ.loc[mask, "variant"].str.replace("FS", "fs")
-        regex_fs = "(^[A-Z]+[0-9]+[A-Z]*fs[\*]*[A-Z]*[0-9]*$)"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_fs, x) is not None)
-        df_civ.loc[mask, "HGVSp"] = "p." + df_civ.loc[mask, "variant"].apply(expand_aa)
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        # reformat HGVSc
-        mask = df_civ["variant"].apply(lambda x: x.startswith("c."))
-        df_civ.loc[mask, "HGVSc"] = df_civ.loc[mask, "variant"]
-        df_civ.loc[mask, "HGVS_Type"] = "complete"
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        return df_civ.reset_index(drop=True)
-
-
-    def _reformat_fus_variant(self, df_civ):
-        # where possible, build gene_1 and gene_2 columns. If variant is "Fusions", gene_1 is set to gene
-        # and gene_2 is set to "Any"
-        df_civ["variant_reformatted"] = False
-        df_civ["gene_1"] = np.nan
-        df_civ["gene_2"] = np.nan
-        df_civ["gene_1_exon"] = np.nan
-        df_civ["gene_2_exon"] = np.nan
-
-        # trim white spaces
-        df_civ["variant"] = df_civ["variant"].str.strip()
-
-        # process "Fusion" variant
-        regex_fus = "^Fusion$"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_fus, x, re.IGNORECASE) is not None)
-        if sum(mask) > 0:
-            df_civ.loc[mask, "gene_1"] = df_civ.loc[mask, "gene"]
-            df_civ.loc[mask, "gene_2"] = "Any"
-            df_civ.loc[mask, "variant_reformatted"] = True
-
-        # process variants in format gene_1-gene_2
-        regex_ggs = "^[A-Z0-9]+-[A-Z0-9]+$"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_ggs, x) is not None)
-        if sum(mask) > 0:
-            df_ggs = df_civ.loc[mask,"variant"].apply(lambda x: x.split("-")).apply(pd.Series)
-            df_civ.loc[mask,"gene_1"] = df_ggs[0]
-            df_civ.loc[mask,"gene_2"] = df_ggs[1]
-            df_civ.loc[mask, "variant_reformatted"] = True
-
-        # process variants in format gene_1-gene_2 exon_1-exon_2
-        regex_ggee = "^[A-Z0-9]+-[A-Z0-9]+\s+[eE]{1}\d+-[eE]{1}\d+$"
-        mask = df_civ["variant"].apply(lambda x: re.search(regex_ggee, x) is not None)
-        if sum(mask)>0:
-            ggee_split = lambda x: x.split()[0].split("-") + x.split()[1].split("-")
-            df_ggee = df_civ.loc[mask,"variant"].apply(ggee_split).apply(pd.Series)
-            df_ggee[2] = df_ggee[2].apply(lambda x: re.sub("e", "", x, re.IGNORECASE))
-            df_ggee[3] = df_ggee[3].apply(lambda x: re.sub("e", "", x, re.IGNORECASE))
-            df_civ.loc[mask,"gene_1"] = df_ggee[0]
-            df_civ.loc[mask,"gene_2"] = df_ggee[1]
-            df_civ.loc[mask,"gene_1_exon"] = df_ggee[2]
-            df_civ.loc[mask,"gene_2_exon"] = df_ggee[3]
-            df_civ.loc[mask, "variant_reformatted"] = True
-
-        return df_civ.reset_index(drop=True)
-
-
-    def _reformat_cna_variant(self, df_civ):
-        df_civ["variant_reformatted"] = False
-        cna_values = ["DELETION", "LOSS", "LOH", "CN LOH", "AMPLIFICATION"]
-
-        # trim white spaces
-        df_civ["variant"] = df_civ["variant"].str.strip()
-
-        # harmonized between capital and small letters
-        df_civ["variant"] = df_civ["variant"].str.upper()
-
-        # rename some
-        old2new = {"COPY NUMBER VARIATION": "CNV",
-                   "COPY-NEUTRAL LOSS OF HETEROZYGOSITY": "CN LOH"}
-        df_civ["variant"] = df_civ["variant"].replace(old2new)
-
-        # split CNV into DELETION, LOSS, CN LOH, AMPLIFICATION
-        if df_civ.shape[0] > 0:
-            df_civ["variant"] = df_civ["variant"].replace({"CNV": "/".join(cna_values)})
-            df_civ = explode_df(df_civ, cols=["variant"], sep="/")
-
-        # expected values
-        mask = df_civ["variant"].isin(cna_values)
-        df_civ.loc[mask, "variant_reformatted"] = True
-
-        return df_civ.reset_index(drop=True)
-
-
-    def _reformat_variant(self, df_civ):
-        if self.category=="mut":
-            return self._reformat_mut_variant(df_civ)
-        elif self.category=="fus":
-            return self._reformat_fus_variant(df_civ)
-        elif self.category=="cna":
-            return self._reformat_cna_variant(df_civ)
-
-
-    def _add_variant_identifier(self, df_civ):
-        if self.category=="mut":
-            return build_alt_identifier(df_civ, self.category, col_gene="gene", col_start="start", col_end="stop",
-                                        col_ref="reference_bases", col_alt="variant_bases")
-        elif self.category=="fus":
-            return build_alt_identifier(df_civ, self.category, col_gene_1="gene_1", col_gene_2="gene_2")
-        elif self.category=="cna":
-            return build_alt_identifier(df_civ, self.category, col_gene="gene", col_alt="variant")
-
-
-    def run(self, df_civ):
-        self._check_args(df_civ)
-        df_civ = self._filter_tumor_types(df_civ)
-        df_civ = self._filter_category(df_civ)
-        df_civ = self._filter_using_rules(df_civ)
-        df_civ = self._reformat_variant(df_civ)
-        df_civ = self._add_variant_identifier(df_civ)
-        return df_civ
-
+def convert_num_to_str(x):
+    try:
+        y = "%d" % int(x)
+    except:
+        try:
+            y = "%f" % float(x)
+            if y=="nan":
+                y = x
+        except:
+            y = x
+    return y
 
 
 class CivicAnnotator(object):
@@ -632,13 +184,26 @@ class CivicAnnotator(object):
         else:
             y[col] = y[col] + ";" + x["disease"]
 
-        # add identity of matching variant
-        col = "CIViC_Matching_Variant"
-
+        # add identity of matching gene variant
+        col = "CIViC_Matching_Gene_Variant"
         if col not in y.index:
-            y[col] = x["variant"]
+            y[col] = x["gene"] + " " + x["variant"]
         else:
-            y[col] = y[col] + ";" + x["variant"]
+            y[col] = y[col] + ";" + x["gene"] + " " + x["variant"]
+
+        # add identity of evidence
+        col = "CIViC_Matching_Evidence_Id"
+        if col not in y.index:
+            y[col] = str(x["evidence_id"])
+        else:
+            y[col] = y[col] + ";" + str(x["evidence_id"])
+
+        # add citation
+        col = "CIViC_Matching_Citation"
+        if col not in y.index:
+            y[col] = x["citation"]
+        else:
+            y[col] = y[col] + ";" + x["citation"]
 
         # add type of annotation (Predictive, Diagnostic, Prognostic, Oncogenic)
         # and direction of annotation (Positive or Negative)
@@ -746,6 +311,128 @@ class CivicAnnotator(object):
             return pd.concat(ys, axis=0)
 
 
+    def _annotate_alt(self, df_civ, df_alt):
+        x_genes = set(df_civ["gene"].dropna())
+        x_genes_1 = set(df_civ["gene_1"].dropna())
+        x_genes_2 = set(df_civ["gene_2"].dropna())
+        y_genes = set(df_alt["Hugo_Symbol"].dropna())
+        y_genes_1 = set(df_alt["Gene_1"].dropna())
+        y_genes_2 = set(df_alt["Gene_2"].dropna())
+
+        old2news = {}
+        cols_keeps =  {}
+        for cat, nam in zip(["m", "c", "f"], ["Mut", "Cna", "Fus"]):
+            old2new = {"Tumor_Sample_Barcode": "Tumor_Sample_Barcode_%s" % nam,
+                       "Sample_Id": "Sample_Id_%s" % nam,
+                       "Matched_Norm_Sample_Barcode": "Matched_Norm_Sample_Barcode_%s" % nam,
+                       "CIViC_Matching_Type": "CIViC_Matching_Type_%s" % nam,
+                       "CIViC_Matching_Gene_Variant": "CIViC_Matching_Gene_Variant_%s" % nam}
+            old2news[cat] = old2new
+            cols_keeps[cat] = list(old2new.values()) + ["%s_Identifier" % nam]
+
+        cols_com = ["Subject_Id", "CIViC_Matching_Disease", "CIViC_Matching_Evidence_Id", "CIViC_Matching_Citation"]
+        tags_civ = ["Predictive:", "Prognostic:", "Diagnostic:"]
+
+        # check that there is a potential match by checking that there is 1 least gene in common
+        if len(x_genes.intersection(y_genes))==0 & len(x_genes_1.intersection(y_genes_1))==0 & \
+           len(x_genes_2.intersection(y_genes_2))==0:
+            print("-CIViC database and input alts table have no gene in common, no annotation.")
+            return pd.DataFrame({c: [] for c in cols_com})
+        else:
+            ys = [pd.DataFrame({c: [] for c in cols_com})]
+            for evidence_id in df_civ["evidence_id"].unique():
+                # select rows in civic db for evidence id
+                df_civ_ei = df_civ.loc[df_civ["evidence_id"]==evidence_id].copy()
+                x_genes = set(df_civ_ei["gene"].dropna())
+                x_genes_1 = set(df_civ_ei["gene_1"].dropna())
+                x_genes_2 = set(df_civ_ei["gene_2"].dropna())
+
+                for subject_id in df_alt["Subject_Id"].unique():
+                    # select rows in alterations table for subject id
+                    df_alt_si = df_alt.loc[df_alt["Subject_Id"]==subject_id].copy()
+                    y_genes = set(df_alt_si["Hugo_Symbol"].dropna())
+                    y_genes_1 = set(df_alt_si["Gene_1"].dropna())
+                    y_genes_2 = set(df_alt_si["Gene_2"].dropna())
+
+                    # check that there is a potential match by checking that there is 1 least gene in common
+                    if len(x_genes.intersection(y_genes))==0 & len(x_genes_1.intersection(y_genes_1))==0 & \
+                       len(x_genes_2.intersection(y_genes_2))==0:
+                        pass
+                    else:
+                        matches = {var: False for var in df_civ_ei["variant"].unique()}
+                        match_cats = {var: None for var in df_civ_ei["variant"].unique()}
+                        match_types = {var: None for var in df_civ_ei["variant"].unique()}
+                        match_xs = {var: None for var in df_civ_ei["variant"].unique()}
+                        match_ys = {var: None for var in df_civ_ei["variant"].unique()}
+
+                        for _, x, in df_civ_ei.iterrows():
+                            if x["category"] in ["m", "c"]:
+                                mask_cat = df_alt_si["Alteration_Category"]==x["category"]
+                                mask_gen = df_alt_si["Hugo_Symbol"]==x["gene"]
+                            elif x["category"] == "f":
+                                mask_cat = df_alt_si["Alteration_Category"]==x["category"]
+                                if x["gene_1"]=="Any" or x["gene_2"]=="Any":
+                                    f_genes = [x["gene_1"], x["gene_2"]]
+                                    mask_gen = (df_alt_si["Gene_1"].isin(f_genes)) | (df_alt_si["Gene_2"].isin(f_genes))
+                                else:
+                                    mask_gen = (df_alt_si["Gene_1"]==x["gene_1"]) | (df_alt_si["Gene_2"]==x["gene_2"])
+                            df_alt_si_gen = df_alt_si.loc[mask_cat & mask_gen]
+
+                            for _, y in df_alt_si_gen.iterrows():
+                                if x["category"]=="m":
+                                    is_match, match_type = self._is_match_mut(x, y)
+                                elif x["category"]=="c":
+                                    is_match, match_type = self._is_match_cna(x, y)
+                                elif x["category"]=="f":
+                                    is_match, match_type = self._is_match_fus(x, y)
+                                if is_match:
+                                    matches[x["variant"]] = is_match
+                                    match_cats[x["variant"]] = x["category"]
+                                    match_types[x["variant"]] = match_type
+                                    match_xs[x["variant"]] = x
+                                    match_ys[x["variant"]] = self._add_annotations(x, y, match_type)
+
+                        if all(matches.values()):
+                            y_vars = []
+                            for var, y in match_ys.items():
+                                cat = match_cats[var]
+                                old2new = old2news[cat]
+                                cols_keep = cols_keeps[cat]
+                                y = y.to_frame().T
+                                y = y.rename(columns=old2new)
+
+                                cols_civ = [c for c in y if any(c.startswith(t) for t in tags_civ)]
+                                cols_keep = cols_com + cols_keep + cols_civ
+                                cols_keep = [x for x in cols_keep if x in y]
+                                y_vars.append(y[cols_keep].set_index(cols_com+cols_civ))
+
+                            ys.append(pd.concat(y_vars, axis=1).reset_index(drop=False))
+
+            # concatenate and collapse annotations from the same combination of (subject, samples, alterations)
+            df_ann = pd.concat(ys, axis=0)
+
+            if df_ann.shape[0] > 0:
+                cols_agg = ["CIViC_Matching_Disease", "CIViC_Matching_Evidence_Id", "CIViC_Matching_Citation"]
+                cols_agg += [x for x in df_ann if x.startswith("CIViC_Matching_Type")]
+                cols_agg += [x for x in df_ann if x.startswith("CIViC_Matching_Gene_Variant")]
+                cols_agg += sorted([x for x in df_ann if any(x.startswith(t) for t in tags_civ)])
+                cols_gby = [x for x in df_ann if x not in cols_agg]
+                df_ann[cols_gby] = df_ann[cols_gby].fillna("N/A")
+                df_ann = df_ann.groupby(cols_gby).agg({c: lambda x: self._aggregate_str(x) for c in cols_agg})
+                df_ann = df_ann.reset_index().replace("N/A", np.nan)
+
+            return df_ann
+
+
+    def _aggregate_str(self, x, sep=";"):
+        x_nna = x.dropna().tolist()
+        if len(x_nna)==0:
+            return np.nan
+        else:
+            x_nna = [convert_num_to_str(e) for e in x_nna]
+            return sep.join(x_nna)
+
+
     def run(self, df_civ, df_alt):
         if self.category=="mut":
             df_ann = self._annotate_mut(df_civ, df_alt)
@@ -753,128 +440,21 @@ class CivicAnnotator(object):
             df_ann = self._annotate_fus(df_civ, df_alt)
         elif self.category=="cna":
             df_ann = self._annotate_cna(df_civ, df_alt)
+        elif self.category=="alt":
+            df_ann = self._annotate_alt(df_civ, df_alt)
 
-        # print info about numbers of variants annotated
-        if "CIViC_Matching_Variant" in df_ann.columns:
-            mask = ~df_ann["CIViC_Matching_Variant"].isnull()
+        if self.category != "alt":
+            # print info about numbers of variants annotated
+            if "CIViC_Matching_Gene_Variant" in df_ann.columns:
+                mask = ~df_ann["CIViC_Matching_Gene_Variant"].isnull()
+            else:
+                mask = pd.Series(False, index=df_ann.index)
+            print("-INFO: %s/%s lines from the input table of alterations were matched in CIViC" % (sum(mask), len(mask)))
+
+            cols_alt = list(df_alt.columns)
+            cols_ann = list(df_ann.columns)
+            cols_new = list(set(cols_ann).difference(set(cols_alt)))
+            return df_ann[cols_alt + sorted(cols_new)]
         else:
-            mask = pd.Series(False, index=df_ann.index)
-        print("-INFO: %s/%s lines from the input table of alterations were matched in CIViC" % (sum(mask), len(mask)))
-
-        cols_alt = list(df_alt.columns)
-        cols_ann = list(df_ann.columns)
-        cols_new = list(set(cols_ann).difference(set(cols_alt)))
-        return df_ann[cols_alt + sorted(cols_new)]
-
-
-def annotate_tumor_types(df_alt, civic, tumor_types, category, rules):
-    # load CIViC database
-    df_civ = pd.read_excel(civic)
-
-    # split tumor types
-    tumor_types_split = tumor_types.split("|")
-
-    # apply a series of filters on CIViC table to select only relevant lines
-    preprocessor = CivicPreprocessor(tumor_types=tumor_types_split, category=category, rules=rules)
-    df_civ = preprocessor.run(df_civ)
-
-    # perform the annotation
-    annotator = CivicAnnotator(category=category, rules=rules)
-    df_ann = annotator.run(df_civ, df_alt)
-    df_ann = clean_alt_identifier(df_ann, category)
-
-    return df_ann
-
-
-def get_columns_civic():
-    return ["CIViC_Matching_Disease", "CIViC_Matching_Type", "CIViC_Matching_Variant",
-            "Predictive:N:A","Predictive:N:B","Predictive:N:C","Predictive:N:D","Predictive:N:E",
-            "Predictive:P:A","Predictive:P:B","Predictive:P:C","Predictive:P:D","Predictive:P:E",
-            "Diagnostic:N:A","Diagnostic:N:B","Diagnostic:N:C","Diagnostic:N:D","Diagnostic:N:E",
-            "Diagnostic:P:A","Diagnostic:P:B","Diagnostic:P:C","Diagnostic:P:D","Diagnostic:P:E",
-            "Prognostic:N:A","Prognostic:N:B","Prognostic:N:C","Prognostic:N:D","Prognostic:N:E",
-            "Prognostic:P:A","Prognostic:P:B","Prognostic:P:C","Prognostic:P:D","Prognostic:P:E"]
-
-def main(args):
-    # load input alterations table
-    df_alt = pd.read_table(args.input)
-
-    if df_alt.shape[0]==0:
-        df_ann = df_alt.copy()
-    else:
-        cols_old = df_alt.columns.tolist()
-
-        # build identifier
-        df_alt = build_alt_identifier(df_alt, args.category)
-
-        # checks
-        if len(args.tumor_types) > 0:
-            print("-INFO: using tumor types from option --tumor_types")
-            print("-INFO: processing %d lines from tumor type %s" % (len(df_alt), args.tumor_types))
-            df_ann = annotate_tumor_types(df_alt=df_alt, civic=args.civic, tumor_types=args.tumor_types,
-                                          category=args.category, rules=args.rules)
-        else:
-            if "Civic_Disease" not in df_alt:
-                raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
-                                 " Civic_Disease is absent from the input table %s." % args.input)
-            elif df_alt["Civic_Disease"].isnull().sum() > 0:
-                raise ValueError("-ERROR: you have not specified a value for --tumor_types and the column" +
-                                 " Civic_Disease from the input table %s contains NaN." % args.input)
-
-            tumor_types_all = df_alt["Civic_Disease"].unique().tolist()
-
-            # annotate group of samples sharing same tumor types
-            # NOTE: the value of --tumor_types has priority over the presence the values of Civic_Disease.
-            print("-INFO: the civic annotator will process %d group(s) of samples from %d different tumor type(s)..." %
-                  (len(tumor_types_all), len(tumor_types_all)))
-
-            dfs_ann = []
-            for tumor_types in tumor_types_all:
-                df_alt_sub = df_alt.loc[df_alt["Civic_Disease"]==tumor_types].copy()
-                print("="*40)
-                print("-INFO: processing %d lines from tumor type %s" % (len(df_alt_sub), tumor_types))
-                df_ann_sub = annotate_tumor_types(df_alt=df_alt_sub, civic=args.civic, tumor_types=tumor_types,
-                                                  category=args.category, rules=args.rules)
-                dfs_ann.append(df_ann_sub)
-
-            # concatenate annotated samples per group of tumor type
-            df_ann = pd.concat(dfs_ann)
-
-        if df_ann.shape[0]>0 and "CIViC_Matching_Disease" in df_ann:
-            # order columns
-            cols_civ = get_columns_civic()
-            cols_new = list(set(df_ann.columns.tolist()).difference(set(cols_old)))
-            cols_new_ord = [x for x in cols_civ if x in cols_new]
-            df_ann = df_ann[cols_old + cols_new_ord]
-        else:
-            # empty dataframe
-            df_ann = df_ann.iloc[:0,:]
-
-    # save
-    print("="*40)
-    df_ann.to_csv(args.output, sep="\t", index=False)
-    print("-INFO: annotated table saved at %s" % args.output)
-
-# run ==================================================================================================================
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Add Tumor_Sample and Normal_Sample fields.")
-    parser.add_argument('--input', type=str, help='Path to input table of variants.',
-                        default="examples/data/example_cna.tsv")
-    parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
-                        default="data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
-    parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
-                        default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
-    parser.add_argument('--category', type=str, help='Choose one of cna, mut or fus.', default='cna')
-    parser.add_argument('--tumor_types', type=str, default='',
-                        help="Tumor type designations in CIViC, separated with |. In case the input table" +
-                        " contains Civic_Disease column, the value of this option has priority over the values of"
-                        " Civic_Disease column.")
-    parser.add_argument('--output', type=str, help='Path to output table of variants.')
-    args = parser.parse_args()
-
-    for arg in vars(args):
-        print("%s: %s" % (arg, getattr(args, arg)))
-    print("\n")
-
-    main(args)
+            print("-INFO: %d combinations from the input table of alterations were matched in CIViC" % len(df_ann))
+            return df_ann
