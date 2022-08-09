@@ -114,9 +114,9 @@ class CivicAnnotator(object):
                 elif hgvsc_ok:
                     return (x_hgvsc==y_hgpvc, "B.4")
 
-        if hgvsp_partial and x_hgvsp is str:
+        if hgvsp_partial and type(x_hgvsp) is str:
             return (x_hgvsp in y_hgvsp_all, "C.2")
-        elif hgvsp_complete and x_hgvsp is str:
+        elif hgvsp_complete and type(x_hgvsp) is str:
             return (x_hgvsp in y_hgvsp_all, "C.3")
         elif hgvsc_ok:
             return (x_hgvsc==y_hgvsc, "C.4")

@@ -122,7 +122,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Perform annotation of alterations using CIViC database.")
     parser.add_argument('--input', type=str, help='Path to input table of variants.',
-                        default="examples/data/example_maf.tsv")
+                        default="tests/data/example_maf.tsv")
     parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
                         default="data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
