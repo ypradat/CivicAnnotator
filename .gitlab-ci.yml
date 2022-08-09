@@ -13,8 +13,8 @@ variables:
 before_script:
   - conda env create -f envs/civic-annotator.yaml
   - source activate civic-annotator
+  - conda install -c anaconda make
   - pip install pytest pytest-cov
-  - apt-get install make
 
 test: 
   stage: test
