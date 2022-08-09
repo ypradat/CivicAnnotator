@@ -20,7 +20,8 @@ __pycache__/
 
 # Python test
 *.pytest_cache
-*.coverage
+.coverage*
+coverage*
 
 # R
 *.Rproj.user

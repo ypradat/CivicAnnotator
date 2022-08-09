@@ -122,13 +122,13 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Perform annotation of alterations using CIViC database.")
     parser.add_argument('--input', type=str, help='Path to input table of variants.',
-                        default="examples/data/example_alt.tsv")
+                        default="examples/data/example_maf.tsv")
     parser.add_argument('--civic', type=str, help='Path to CIViC database of clinical evidence summaries.',
                         default="data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx")
     parser.add_argument('--rules', type=str, help='Path to table of rules for cleaning the database and matching.',
                         default="data/CIViC_Curation_And_Rules_Mutation.xlsx")
-    parser.add_argument('--category', type=str, default="alt",
-                        help="Choose one of alt, cna, mut fus. alt considers only annotations spanning 2 types" + \
+    parser.add_argument('--category', type=str, default="mut",
+                        help="Choose one of alt, cna, mut or fus. alt considers only annotations spanning 2 types" + \
                          " of data or more.")
     parser.add_argument('--tumor_types', type=str, default='',
                         help="Tumor type designations in CIViC, separated with |. In case the input table" +

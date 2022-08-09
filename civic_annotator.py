@@ -97,10 +97,11 @@ class CivicAnnotator(object):
         #    * C.2 = B.2
         #    * C.3 = B.3
         #    * C.4 = B.4
-        if start_ok and stop_ok and alleles_ok:
-            return (x_mid==y_mid, "A")
-        elif start_ok and stop_ok:
-            # TODO: is and good? would or be better or lead to false-matches?
+        if start_ok and stop_ok and alleles_ok and x_mid==y_mid:
+            return (True, "A")
+
+        if start_ok and stop_ok:
+            # TODO: is "and" good? would "or" be better or lead to false-matches?
             if y_start >= x_start and y_stop <= x_stop:
                 if variant_specific:
                     vcs = df_rul.loc[df_rul["Variant"].str.lower()==x_var.lower(),"Variant_Classifications"].iloc[0]
@@ -112,13 +113,13 @@ class CivicAnnotator(object):
                     return (x_hgvsp in y_hgvsp_all, "B.3")
                 elif hgvsc_ok:
                     return (x_hgvsc==y_hgpvc, "B.4")
-        else:
-            if hgvsp_partial:
-                return (x_hgvsp in y_hgvsp_all, "C.2")
-            elif hgvsp_complete:
-                return (x_hgvsp in y_hgvsp_all, "C.3")
-            elif hgvsc_ok:
-                return (x_hgvsc==y_hgpvc, "C.4")
+
+        if hgvsp_partial:
+            return (x_hgvsp in y_hgvsp_all, "C.2")
+        elif hgvsp_complete:
+            return (x_hgvsp in y_hgvsp_all, "C.3")
+        elif hgvsc_ok:
+            return (x_hgvsc==y_hgpvc, "C.4")
 
         return (False, "F")
 

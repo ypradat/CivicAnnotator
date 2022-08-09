@@ -1,0 +1,27 @@
+image: "continuumio/miniconda3"
+
+default:
+  tags:
+    - docker
+
+stages:
+  - test
+
+variables:
+  CODECOV_TOKEN: "6cbecda4-b305-4d08-84af-c101e6335582"
+
+before_script:
+  - conda env create -f envs/civic-annotator.yaml
+  - conda activate civic-annotator
+  - pip install pytest pytest-cov
+
+test: 
+  stage: test
+  script:
+    - make test
+    - curl -Os https://uploader.codecov.io/latest/linux/codecov
+    - chmod +x codecov
+    - ./codecov -t ${CODECOV_TOKEN}
+  only:
+    refs:
+      - master

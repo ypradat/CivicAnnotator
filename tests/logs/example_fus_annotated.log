@@ -1,9 +1,9 @@
-input: examples/data/example_fus.tsv
+input: tests/data/example_fus.tsv
 civic: data/01-Jan-2022-ClinicalEvidenceSummaries_Annotated.xlsx
 rules: data/CIViC_Curation_And_Rules_Mutation.xlsx
 category: fus
 tumor_types: 
-output: examples/data/example_fus_annotated.tsv
+output: tests/data/example_fus_annotated.tsv
 
 
 -INFO: the civic annotator will process 1 group(s) of samples from 1 different tumor type(s)...
@@ -24,4 +24,4 @@ output: examples/data/example_fus_annotated.tsv
 -INFO: excluded 0/11 evidence lines manually reviewed
 -INFO: 1/23 lines from the input table of alterations were matched in CIViC
 ========================================
--INFO: annotated table saved at examples/data/example_fus_annotated.tsv
+-INFO: annotated table saved at tests/data/example_fus_annotated.tsv
