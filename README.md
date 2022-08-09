@@ -1,4 +1,6 @@
 # CivicAnnotator
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![codecov](https://codecov.io/gh/ypradat/CivicAnnotator/branch/master/graph/badge.svg?token=YVVOSTUAWS)](https://codecov.io/gh/ypradat/CivicAnnotator)
 
 This repository hosts some scripts for performing non-exhaustive annotations of mutations, fusions or copy-number events
 using the [CIViC database](https://civicdb.org/home). The script will leave the number of rows untouched and will add
