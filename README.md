@@ -15,12 +15,14 @@ with
 **NOTE**: not all possible combinations of these three tags are automatically added to the input table in order to avoid
 completely empty columns.
 
-The script will also add the following 3 columns that detail how the alteration was matched in CIViC in order to
+The script will also add the following 5 columns that detail how the alteration was matched in CIViC in order to
 allow for a manual review of the annotations.
 
 - `CIViC_Matching_Disease`
 - `CIViC_Matching_Type`
-- `CIViC_Matching_Variant`
+- `CIViC_Matching_Gene_Variant`
+- `CIViC_Matching_Evidence_Id`
+- `CIViC_Matching_Citation`
 
 # Requirements
 
@@ -57,8 +59,8 @@ Please read the README `data/README.md` for more details about what these files 
 
 # Examples
 
-Examples of commands to annotate mutations, fusions and copy-number events are provided in the `examples` folder. The
-commands are described in the bash scripts while the input files to these commands are provided in `examples/data`.
+Examples of commands to annotate mutations, fusions and copy-number events are provided in the `tests` folder. The
+commands are described in the bash scripts while the input files to these commands are provided in `tests/data`.
 
 # References
 

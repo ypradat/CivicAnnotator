@@ -12,7 +12,7 @@ variables:
 
 before_script:
   - conda env create -f envs/civic-annotator.yaml
-  - conda activate civic-annotator
+  - source activate civic-annotator
   - pip install pytest pytest-cov
 
 test: 
