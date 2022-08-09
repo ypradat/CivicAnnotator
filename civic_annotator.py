@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @created: Jan 14 2022
-@modified: May 13 2022
+@modified: Aug 09 2022
 @author: Yoann Pradat
 
     CentraleSupelec
@@ -114,12 +114,12 @@ class CivicAnnotator(object):
                 elif hgvsc_ok:
                     return (x_hgvsc==y_hgpvc, "B.4")
 
-        if hgvsp_partial:
+        if hgvsp_partial and x_hgvsp is str:
             return (x_hgvsp in y_hgvsp_all, "C.2")
-        elif hgvsp_complete:
+        elif hgvsp_complete and x_hgvsp is str:
             return (x_hgvsp in y_hgvsp_all, "C.3")
         elif hgvsc_ok:
-            return (x_hgvsc==y_hgpvc, "C.4")
+            return (x_hgvsc==y_hgvsc, "C.4")
 
         return (False, "F")
 
