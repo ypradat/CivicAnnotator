@@ -87,12 +87,12 @@ class CivicAnnotator(object):
         #       Then any alteration where at least one of all the transcripts has a protein consequence containing the
         #       pattern will be a match.
         #    * B.4 the variant has complete HGVS dna format
-        #      -- substitution p.[XX][N]>[N]
-        #      -- deletion p.[XX](_[XX])del
-        #      -- duplication p.[XX](_[XX])dup
-        #      -- insertion p.[XX](_[XX])ins[N]
-        #      -- invertion p.[XX](_[XX])inv[N]
-        #      -- deletion-insertion p.[XX](_[XX])delins[N]
+        #      -- substitution c.[XX][N]>[N]
+        #      -- deletion c.[XX](_[XX])del
+        #      -- duplication c.[XX](_[XX])dup
+        #      -- insertion c.[XX](_[XX])ins[N]
+        #      -- invertion c.[XX](_[XX])inv[N]
+        #      -- deletion-insertion c.[XX](_[XX])delins[N]
         #  - C -> start and stop are not present
         #    * C.2 = B.2
         #    * C.3 = B.3
